@@ -1,14 +1,9 @@
-use std::time::Duration;
-
 use axum::{Json, extract::State};
-use tokio::time::timeout;
 
 use crate::{
     errors::{PdfError, PdfInternalError},
     models::{AppState, GeneratePdfRequest, GeneratePdfResponse},
 };
-
-const TIMEOUT_FOR_PDF_GENERATE: Duration = Duration::from_secs(1);
 
 pub async fn generate_pdf(
     State(state): State<AppState>,
@@ -20,12 +15,11 @@ pub async fn generate_pdf(
         .map(normalize_card_id)
         .collect::<Vec<_>>();
 
-    let path = timeout(
-        TIMEOUT_FOR_PDF_GENERATE,
-        state.pdf_service.generate(&card_ids),
-    )
-    .await
-    .map_err(|_| PdfInternalError::PdfGenerationTimedOut)??;
+    let path = state
+        .pdf_service
+        .generate(&card_ids)
+        .await
+        .map_err(|_| PdfInternalError::PdfGenerationTimedOut)?;
 
     let file_name = path
         .file_name()
