@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF Generator</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="app">
+        <header class="app-header">
+          <h1>Сборка PDF из карточек</h1>
+          <p class="subtitle">
+            Вставьте ID карт и получите готовый файл для печати.
+          </p>
+        </header>
+
+        <form id="pdf-form" class="panel">
+          <div class="field-head">
+            <label class="field-label" for="card-ids-input">ID карт</label>
+            <span id="card-count" class="field-meta">0 ID</span>
+          </div>
+
+          <p class="field-hint">
+            По одному ID на строку. Также поддерживаются пробелы, запятые и
+            точка с запятой.
+          </p>
+
+          <textarea
+            id="card-ids-input"
+            name="card_ids"
+            rows="11"
+            spellcheck="false"
+            aria-describedby="input-example"
+          ></textarea>
+
+          <p id="input-example" class="example">
+            Пример: <code>1</code> <code>12</code> <code>203</code> <code>311</code>
+          </p>
+
+          <div class="actions">
+            <button id="generate-button" type="submit" class="button button-primary">
+              Сформировать PDF
+            </button>
+            <button id="clear-button" type="button" class="button button-secondary">
+              Очистить
+            </button>
+          </div>
+        </form>
+
+        <section id="result-panel" class="panel result-panel result-idle">
+          <h2>Результат</h2>
+          <div id="result" class="result-text">
+            Введите ID карт и нажмите «Сформировать PDF».
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>

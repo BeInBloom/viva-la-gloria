@@ -1,0 +1,34 @@
+mod handlers;
+mod models;
+mod pdf;
+
+use std::sync::Arc;
+
+use axum::{Router, routing::post};
+use tower_http::services::{ServeDir, ServeFile};
+
+use crate::{
+    handlers::generate_pdf,
+    models::{AppState, Manifest},
+};
+
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    let manifest: Manifest =
+        serde_json::from_str(&tokio::fs::read_to_string("./manifest.json").await?)?;
+    let state = AppState {
+        manifest: Arc::new(manifest),
+    };
+
+    let app = Router::new()
+        .route_service("/", ServeFile::new("static/index.html"))
+        .nest_service("/static", ServeDir::new("static"))
+        .nest_service("/generated-pdf", ServeDir::new("generated-pdf"))
+        .route("/pdf", post(generate_pdf))
+        .with_state(state);
+
+    let listener = tokio::net::TcpListener::bind("127.0.0.1:8080").await?;
+
+    axum::serve(listener, app).await?;
+    Ok(())
+}

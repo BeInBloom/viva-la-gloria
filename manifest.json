@@ -1,0 +1,5511 @@
+{
+  "asset_root": "assets/images/eoj/main_sets",
+  "cards_by_id": {
+    "001": {
+      "set_name": "set_1",
+      "card_id": "001",
+      "title_slug": "flame-magus",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "02",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "001__flame-magus__variant-base__rev-02.jpeg",
+          "relative_path": "set_1/001__flame-magus__variant-base__rev-02.jpeg"
+        }
+      ]
+    },
+    "002": {
+      "set_name": "set_1",
+      "card_id": "002",
+      "title_slug": "hellfire-spitter",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "002__hellfire-spitter__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/002__hellfire-spitter__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "003": {
+      "set_name": "set_1",
+      "card_id": "003",
+      "title_slug": "freedonian-wanderer",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "003__freedonian-wanderer__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/003__freedonian-wanderer__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "004": {
+      "set_name": "set_1",
+      "card_id": "004",
+      "title_slug": "partmole-flame-lizard",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "004__partmole-flame-lizard__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/004__partmole-flame-lizard__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "005": {
+      "set_name": "set_1",
+      "card_id": "005",
+      "title_slug": "firefly-ninja",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "005__firefly-ninja__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/005__firefly-ninja__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "006": {
+      "set_name": "set_1",
+      "card_id": "006",
+      "title_slug": "great-minos-of-sciondar",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "006__great-minos-of-sciondar__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/006__great-minos-of-sciondar__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "007": {
+      "set_name": "set_1",
+      "card_id": "007",
+      "title_slug": "flame-ascetic",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "02",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "007__flame-ascetic__variant-base__rev-02.jpeg",
+          "relative_path": "set_1/007__flame-ascetic__variant-base__rev-02.jpeg"
+        }
+      ]
+    },
+    "008": {
+      "set_name": "set_1",
+      "card_id": "008",
+      "title_slug": "partmole-flame-guard",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "02",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "008__partmole-flame-guard__variant-base__rev-02.jpeg",
+          "relative_path": "set_1/008__partmole-flame-guard__variant-base__rev-02.jpeg"
+        }
+      ]
+    },
+    "009": {
+      "set_name": "set_1",
+      "card_id": "009",
+      "title_slug": "lesser-granvenoa",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "02",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "009__lesser-granvenoa__variant-base__rev-02.jpeg",
+          "relative_path": "set_1/009__lesser-granvenoa__variant-base__rev-02.jpeg"
+        }
+      ]
+    },
+    "010": {
+      "set_name": "set_1",
+      "card_id": "010",
+      "title_slug": "partmole-fire-oracle",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "02",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "010__partmole-fire-oracle__variant-base__rev-02.jpeg",
+          "relative_path": "set_1/010__partmole-fire-oracle__variant-base__rev-02.jpeg"
+        }
+      ]
+    },
+    "011": {
+      "set_name": "set_1",
+      "card_id": "011",
+      "title_slug": "triceptaur-behemoth",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "02",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "011__triceptaur-behemoth__variant-base__rev-02.jpeg",
+          "relative_path": "set_1/011__triceptaur-behemoth__variant-base__rev-02.jpeg"
+        }
+      ]
+    },
+    "012": {
+      "set_name": "set_1",
+      "card_id": "012",
+      "title_slug": "pursuer-of-saint-dhees",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "012__pursuer-of-saint-dhees__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/012__pursuer-of-saint-dhees__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "013": {
+      "set_name": "set_1",
+      "card_id": "013",
+      "title_slug": "infernal-sciondar-dragon",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "013__infernal-sciondar-dragon__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/013__infernal-sciondar-dragon__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "014": {
+      "set_name": "set_1",
+      "card_id": "014",
+      "title_slug": "didi-the-enlightened",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "014__didi-the-enlightened__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/014__didi-the-enlightened__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "015": {
+      "set_name": "set_1",
+      "card_id": "015",
+      "title_slug": "warden-hilda",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "blank",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "015__warden-hilda__variant-blank__rev-01.jpeg",
+          "relative_path": "set_1/015__warden-hilda__variant-blank__rev-01.jpeg"
+        },
+        {
+          "variant": "text",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "015__warden-hilda__variant-text__rev-01.jpeg",
+          "relative_path": "set_1/015__warden-hilda__variant-text__rev-01.jpeg"
+        }
+      ]
+    },
+    "016": {
+      "set_name": "set_1",
+      "card_id": "016",
+      "title_slug": "crucible-king-dios-iv",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "016__crucible-king-dios-iv__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/016__crucible-king-dios-iv__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "017": {
+      "set_name": "set_1",
+      "card_id": "017",
+      "title_slug": "sciondar-fire-god",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "017__sciondar-fire-god__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/017__sciondar-fire-god__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "018": {
+      "set_name": "set_1",
+      "card_id": "018",
+      "title_slug": "red-cubic",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "018__red-cubic__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/018__red-cubic__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "019": {
+      "set_name": "set_1",
+      "card_id": "019",
+      "title_slug": "monk-elder-of-okunada",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "019__monk-elder-of-okunada__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/019__monk-elder-of-okunada__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "020": {
+      "set_name": "set_1",
+      "card_id": "020",
+      "title_slug": "tritonan-ice-guard",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "020__tritonan-ice-guard__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/020__tritonan-ice-guard__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "021": {
+      "set_name": "set_1",
+      "card_id": "021",
+      "title_slug": "tritonan-harpoonsman",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "021__tritonan-harpoonsman__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/021__tritonan-harpoonsman__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "022": {
+      "set_name": "set_1",
+      "card_id": "022",
+      "title_slug": "aluhja-priestess",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "022__aluhja-priestess__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/022__aluhja-priestess__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "023": {
+      "set_name": "set_1",
+      "card_id": "023",
+      "title_slug": "tentacles-of-possession",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "023__tentacles-of-possession__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/023__tentacles-of-possession__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "024": {
+      "set_name": "set_1",
+      "card_id": "024",
+      "title_slug": "wolf-ninja",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "024__wolf-ninja__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/024__wolf-ninja__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "025": {
+      "set_name": "set_1",
+      "card_id": "025",
+      "title_slug": "cloud-runner",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "025__cloud-runner__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/025__cloud-runner__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "026": {
+      "set_name": "set_1",
+      "card_id": "026",
+      "title_slug": "dancing-temptress",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "026__dancing-temptress__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/026__dancing-temptress__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "027": {
+      "set_name": "set_1",
+      "card_id": "027",
+      "title_slug": "venoan-assassin",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "027__venoan-assassin__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/027__venoan-assassin__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "028": {
+      "set_name": "set_1",
+      "card_id": "028",
+      "title_slug": "queens-servant",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "028__queens-servant__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/028__queens-servant__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "029": {
+      "set_name": "set_1",
+      "card_id": "029",
+      "title_slug": "moving-isle-of-kadena",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "029__moving-isle-of-kadena__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/029__moving-isle-of-kadena__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "030": {
+      "set_name": "set_1",
+      "card_id": "030",
+      "title_slug": "don-of-venoa",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "030__don-of-venoa__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/030__don-of-venoa__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "031": {
+      "set_name": "set_1",
+      "card_id": "031",
+      "title_slug": "dragon-of-voice-sea",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "031__dragon-of-voice-sea__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/031__dragon-of-voice-sea__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "032": {
+      "set_name": "set_1",
+      "card_id": "032",
+      "title_slug": "mercenary-savior-latoo",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "032__mercenary-savior-latoo__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/032__mercenary-savior-latoo__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "033": {
+      "set_name": "set_1",
+      "card_id": "033",
+      "title_slug": "siam-traitor-of-seas",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "blank",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "033__siam-traitor-of-seas__variant-blank__rev-01.jpeg",
+          "relative_path": "set_1/033__siam-traitor-of-seas__variant-blank__rev-01.jpeg"
+        },
+        {
+          "variant": "text",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "033__siam-traitor-of-seas__variant-text__rev-01.jpeg",
+          "relative_path": "set_1/033__siam-traitor-of-seas__variant-text__rev-01.jpeg"
+        }
+      ]
+    },
+    "034": {
+      "set_name": "set_1",
+      "card_id": "034",
+      "title_slug": "imposter-queen-anfisa",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "034__imposter-queen-anfisa__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/034__imposter-queen-anfisa__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "035": {
+      "set_name": "set_1",
+      "card_id": "035",
+      "title_slug": "goddess-tritona",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "035__goddess-tritona__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/035__goddess-tritona__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "036": {
+      "set_name": "set_1",
+      "card_id": "036",
+      "title_slug": "blue-cubic",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "036__blue-cubic__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/036__blue-cubic__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "037": {
+      "set_name": "set_1",
+      "card_id": "037",
+      "title_slug": "verzar-canine",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "037__verzar-canine__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/037__verzar-canine__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "038": {
+      "set_name": "set_1",
+      "card_id": "038",
+      "title_slug": "verzar-foot-soldier",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "038__verzar-foot-soldier__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/038__verzar-foot-soldier__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "039": {
+      "set_name": "set_1",
+      "card_id": "039",
+      "title_slug": "stone-wing-dwarf",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "039__stone-wing-dwarf__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/039__stone-wing-dwarf__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "040": {
+      "set_name": "set_1",
+      "card_id": "040",
+      "title_slug": "skeleton-soldier",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "040__skeleton-soldier__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/040__skeleton-soldier__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "041": {
+      "set_name": "set_1",
+      "card_id": "041",
+      "title_slug": "giant-axe-dwarf",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "041__giant-axe-dwarf__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/041__giant-axe-dwarf__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "042": {
+      "set_name": "set_1",
+      "card_id": "042",
+      "title_slug": "spider-ninja",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "042__spider-ninja__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/042__spider-ninja__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "043": {
+      "set_name": "set_1",
+      "card_id": "043",
+      "title_slug": "novogus-catapult",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "043__novogus-catapult__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/043__novogus-catapult__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "044": {
+      "set_name": "set_1",
+      "card_id": "044",
+      "title_slug": "dark-yokozuna-sekimaru",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "044__dark-yokozuna-sekimaru__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/044__dark-yokozuna-sekimaru__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "045": {
+      "set_name": "set_1",
+      "card_id": "045",
+      "title_slug": "se-hollyn-fortress",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "045__se-hollyn-fortress__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/045__se-hollyn-fortress__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "046": {
+      "set_name": "set_1",
+      "card_id": "046",
+      "title_slug": "novogus-golem",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "046__novogus-golem__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/046__novogus-golem__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "047": {
+      "set_name": "set_1",
+      "card_id": "047",
+      "title_slug": "dungeon-of-ten-tyrants",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "047__dungeon-of-ten-tyrants__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/047__dungeon-of-ten-tyrants__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "048": {
+      "set_name": "set_1",
+      "card_id": "048",
+      "title_slug": "verzar-elephant-brigade",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "048__verzar-elephant-brigade__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/048__verzar-elephant-brigade__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "049": {
+      "set_name": "set_1",
+      "card_id": "049",
+      "title_slug": "undead-dragon",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "049__undead-dragon__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/049__undead-dragon__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "050": {
+      "set_name": "set_1",
+      "card_id": "050",
+      "title_slug": "arelai-the-protector",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "050__arelai-the-protector__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/050__arelai-the-protector__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "051": {
+      "set_name": "set_1",
+      "card_id": "051",
+      "title_slug": "black-hood-dwarf-vulitra",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "blank",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "051__black-hood-dwarf-vulitra__variant-blank__rev-01.jpeg",
+          "relative_path": "set_1/051__black-hood-dwarf-vulitra__variant-blank__rev-01.jpeg"
+        },
+        {
+          "variant": "text",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "051__black-hood-dwarf-vulitra__variant-text__rev-01.jpeg",
+          "relative_path": "set_1/051__black-hood-dwarf-vulitra__variant-text__rev-01.jpeg"
+        }
+      ]
+    },
+    "052": {
+      "set_name": "set_1",
+      "card_id": "052",
+      "title_slug": "undead-king-novogus",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "052__undead-king-novogus__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/052__undead-king-novogus__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "053": {
+      "set_name": "set_1",
+      "card_id": "053",
+      "title_slug": "novogus-gravekeeper",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "053__novogus-gravekeeper__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/053__novogus-gravekeeper__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "054": {
+      "set_name": "set_1",
+      "card_id": "054",
+      "title_slug": "yellow-cubic",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "054__yellow-cubic__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/054__yellow-cubic__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "055": {
+      "set_name": "set_1",
+      "card_id": "055",
+      "title_slug": "leapfrog-bandit",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "055__leapfrog-bandit__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/055__leapfrog-bandit__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "056": {
+      "set_name": "set_1",
+      "card_id": "056",
+      "title_slug": "green-lycanthrope",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "056__green-lycanthrope__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/056__green-lycanthrope__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "057": {
+      "set_name": "set_1",
+      "card_id": "057",
+      "title_slug": "bewitching-elf-archeress",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "promo",
+          "variant_index": "01",
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "057__bewitching-elf-archeress__variant-promo__alt-01__rev-01.jpeg",
+          "relative_path": "set_1/057__bewitching-elf-archeress__variant-promo__alt-01__rev-01.jpeg"
+        },
+        {
+          "variant": "promo",
+          "variant_index": "02",
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "057__bewitching-elf-archeress__variant-promo__alt-02__rev-01.jpeg",
+          "relative_path": "set_1/057__bewitching-elf-archeress__variant-promo__alt-02__rev-01.jpeg"
+        },
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "057__bewitching-elf-archeress__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/057__bewitching-elf-archeress__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "058": {
+      "set_name": "set_1",
+      "card_id": "058",
+      "title_slug": "sleeptrap",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "058__sleeptrap__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/058__sleeptrap__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "059": {
+      "set_name": "set_1",
+      "card_id": "059",
+      "title_slug": "elven-berserker-maiden",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "059__elven-berserker-maiden__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/059__elven-berserker-maiden__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "060": {
+      "set_name": "set_1",
+      "card_id": "060",
+      "title_slug": "samurai-nagirashu",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "060__samurai-nagirashu__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/060__samurai-nagirashu__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "061": {
+      "set_name": "set_1",
+      "card_id": "061",
+      "title_slug": "twin-goblins",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "061__twin-goblins__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/061__twin-goblins__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "062": {
+      "set_name": "set_1",
+      "card_id": "062",
+      "title_slug": "swallow-ninja",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "062__swallow-ninja__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/062__swallow-ninja__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "063": {
+      "set_name": "set_1",
+      "card_id": "063",
+      "title_slug": "juno-tree-haunt",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "063__juno-tree-haunt__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/063__juno-tree-haunt__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "064": {
+      "set_name": "set_1",
+      "card_id": "064",
+      "title_slug": "elven-rider",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "064__elven-rider__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/064__elven-rider__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "065": {
+      "set_name": "set_1",
+      "card_id": "065",
+      "title_slug": "juno-prisoner-trap",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "065__juno-prisoner-trap__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/065__juno-prisoner-trap__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "066": {
+      "set_name": "set_1",
+      "card_id": "066",
+      "title_slug": "elven-death-dancer",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "066__elven-death-dancer__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/066__elven-death-dancer__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "067": {
+      "set_name": "set_1",
+      "card_id": "067",
+      "title_slug": "juno-forest-dragon",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "067__juno-forest-dragon__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/067__juno-forest-dragon__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "068": {
+      "set_name": "set_1",
+      "card_id": "068",
+      "title_slug": "edin-the-persecuted",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "promo",
+          "variant_index": "01",
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "068__edin-the-persecuted__variant-promo__alt-01.jpeg",
+          "relative_path": "set_1/068__edin-the-persecuted__variant-promo__alt-01.jpeg"
+        },
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "068__edin-the-persecuted__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/068__edin-the-persecuted__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "069": {
+      "set_name": "set_1",
+      "card_id": "069",
+      "title_slug": "inquisitor-koog",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "blank",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "069__inquisitor-koog__variant-blank__rev-01.jpeg",
+          "relative_path": "set_1/069__inquisitor-koog__variant-blank__rev-01.jpeg"
+        },
+        {
+          "variant": "text",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "069__inquisitor-koog__variant-text__rev-01.jpeg",
+          "relative_path": "set_1/069__inquisitor-koog__variant-text__rev-01.jpeg"
+        }
+      ]
+    },
+    "070": {
+      "set_name": "set_1",
+      "card_id": "070",
+      "title_slug": "green-erlking-zomba",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "070__green-erlking-zomba__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/070__green-erlking-zomba__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "071": {
+      "set_name": "set_1",
+      "card_id": "071",
+      "title_slug": "exalted-elven-deity",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "071__exalted-elven-deity__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/071__exalted-elven-deity__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "072": {
+      "set_name": "set_1",
+      "card_id": "072",
+      "title_slug": "green-cubic",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "072__green-cubic__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/072__green-cubic__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "073": {
+      "set_name": "set_1",
+      "card_id": "073",
+      "title_slug": "biolith-bomber",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "promo",
+          "variant_index": "01",
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "073__biolith-bomber__variant-promo__alt-01__rev-01.jpeg",
+          "relative_path": "set_1/073__biolith-bomber__variant-promo__alt-01__rev-01.jpeg"
+        },
+        {
+          "variant": "promo",
+          "variant_index": "02",
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "073__biolith-bomber__variant-promo__alt-02__rev-01.jpeg",
+          "relative_path": "set_1/073__biolith-bomber__variant-promo__alt-02__rev-01.jpeg"
+        },
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "073__biolith-bomber__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/073__biolith-bomber__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "074": {
+      "set_name": "set_1",
+      "card_id": "074",
+      "title_slug": "biolith-stinger",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "074__biolith-stinger__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/074__biolith-stinger__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "075": {
+      "set_name": "set_1",
+      "card_id": "075",
+      "title_slug": "imperial-biolith-guard",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "075__imperial-biolith-guard__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/075__imperial-biolith-guard__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "076": {
+      "set_name": "set_1",
+      "card_id": "076",
+      "title_slug": "biolith-battle-chariot",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "076__biolith-battle-chariot__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/076__biolith-battle-chariot__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "077": {
+      "set_name": "set_1",
+      "card_id": "077",
+      "title_slug": "morning-star-warrior",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "077__morning-star-warrior__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/077__morning-star-warrior__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "078": {
+      "set_name": "set_1",
+      "card_id": "078",
+      "title_slug": "biolith-ninja",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "078__biolith-ninja__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/078__biolith-ninja__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "079": {
+      "set_name": "set_1",
+      "card_id": "079",
+      "title_slug": "behemoth-groundbreaker",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "079__behemoth-groundbreaker__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/079__behemoth-groundbreaker__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "080": {
+      "set_name": "set_1",
+      "card_id": "080",
+      "title_slug": "dragoon-dragon-cavalry",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "080__dragoon-dragon-cavalry__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/080__dragoon-dragon-cavalry__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "081": {
+      "set_name": "set_1",
+      "card_id": "081",
+      "title_slug": "taurus-monolith",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "081__taurus-monolith__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/081__taurus-monolith__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "082": {
+      "set_name": "set_1",
+      "card_id": "082",
+      "title_slug": "aegis-citadel",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "082__aegis-citadel__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/082__aegis-citadel__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "083": {
+      "set_name": "set_1",
+      "card_id": "083",
+      "title_slug": "arc-satellite-cannon",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "083__arc-satellite-cannon__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/083__arc-satellite-cannon__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "084": {
+      "set_name": "set_1",
+      "card_id": "084",
+      "title_slug": "ouroboros-dragon",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "084__ouroboros-dragon__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/084__ouroboros-dragon__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "085": {
+      "set_name": "set_1",
+      "card_id": "085",
+      "title_slug": "tino-son-of-scion",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "085__tino-son-of-scion__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/085__tino-son-of-scion__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "086": {
+      "set_name": "set_1",
+      "card_id": "086",
+      "title_slug": "wormak-heir-to-the-bioliths",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "blank",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "086__wormak-heir-to-the-bioliths__variant-blank__rev-01.jpeg",
+          "relative_path": "set_1/086__wormak-heir-to-the-bioliths__variant-blank__rev-01.jpeg"
+        },
+        {
+          "variant": "text",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "086__wormak-heir-to-the-bioliths__variant-text__rev-01.jpeg",
+          "relative_path": "set_1/086__wormak-heir-to-the-bioliths__variant-text__rev-01.jpeg"
+        }
+      ]
+    },
+    "087": {
+      "set_name": "set_1",
+      "card_id": "087",
+      "title_slug": "scion-biolith-lord",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "087__scion-biolith-lord__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/087__scion-biolith-lord__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "088": {
+      "set_name": "set_1",
+      "card_id": "088",
+      "title_slug": "guardian-watchtower",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "088__guardian-watchtower__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/088__guardian-watchtower__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "089": {
+      "set_name": "set_1",
+      "card_id": "089",
+      "title_slug": "phaseus-biolith-god",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "089__phaseus-biolith-god__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/089__phaseus-biolith-god__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "090": {
+      "set_name": "set_1",
+      "card_id": "090",
+      "title_slug": "white-cubic",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "090__white-cubic__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/090__white-cubic__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "091": {
+      "set_name": "set_1",
+      "card_id": "091",
+      "title_slug": "parmetic-holy-feast",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "091__parmetic-holy-feast__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/091__parmetic-holy-feast__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "092": {
+      "set_name": "set_1",
+      "card_id": "092",
+      "title_slug": "goghlie-altar",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "092__goghlie-altar__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/092__goghlie-altar__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "093": {
+      "set_name": "set_1",
+      "card_id": "093",
+      "title_slug": "summoner-mesmers-lapse",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "093__summoner-mesmers-lapse__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/093__summoner-mesmers-lapse__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "094": {
+      "set_name": "set_1",
+      "card_id": "094",
+      "title_slug": "beguiling-fog",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "094__beguiling-fog__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/094__beguiling-fog__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "095": {
+      "set_name": "set_1",
+      "card_id": "095",
+      "title_slug": "yugas-mesmerizing-fog",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "095__yugas-mesmerizing-fog__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/095__yugas-mesmerizing-fog__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "096": {
+      "set_name": "set_1",
+      "card_id": "096",
+      "title_slug": "clare-wils-banner",
+      "review_flags": [
+        "title_review_clar_vs_clare_wil"
+      ],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "096__clare-wils-banner__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/096__clare-wils-banner__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "097": {
+      "set_name": "set_1",
+      "card_id": "097",
+      "title_slug": "healing-shower",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "097__healing-shower__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/097__healing-shower__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "098": {
+      "set_name": "set_1",
+      "card_id": "098",
+      "title_slug": "fissures-of-goghlie",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "098__fissures-of-goghlie__variant-base__rev-01.jpeg",
+          "relative_path": "set_1/098__fissures-of-goghlie__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "099": {
+      "set_name": "set_1",
+      "card_id": "099",
+      "title_slug": "great-tolicore-quake",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "099__great-tolicore-quake__variant-base.jpeg",
+          "relative_path": "set_1/099__great-tolicore-quake__variant-base.jpeg"
+        }
+      ]
+    },
+    "100": {
+      "set_name": "set_1",
+      "card_id": "100",
+      "title_slug": "summoner-mesmers-errand",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "100__summoner-mesmers-errand__variant-base.jpeg",
+          "relative_path": "set_1/100__summoner-mesmers-errand__variant-base.jpeg"
+        }
+      ]
+    },
+    "101": {
+      "set_name": "set_1",
+      "card_id": "101",
+      "title_slug": "tinoan-telekinesis",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "101__tinoan-telekinesis__variant-base.jpeg",
+          "relative_path": "set_1/101__tinoan-telekinesis__variant-base.jpeg"
+        }
+      ]
+    },
+    "102": {
+      "set_name": "set_1",
+      "card_id": "102",
+      "title_slug": "tinoan-teleportation",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "102__tinoan-teleportation__variant-base.jpeg",
+          "relative_path": "set_1/102__tinoan-teleportation__variant-base.jpeg"
+        }
+      ]
+    },
+    "103": {
+      "set_name": "set_1",
+      "card_id": "103",
+      "title_slug": "sciondar-inferno",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "103__sciondar-inferno__variant-base.jpeg",
+          "relative_path": "set_1/103__sciondar-inferno__variant-base.jpeg"
+        }
+      ]
+    },
+    "104": {
+      "set_name": "set_1",
+      "card_id": "104",
+      "title_slug": "ice-flood-of-okunada",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "104__ice-flood-of-okunada__variant-base.jpeg",
+          "relative_path": "set_1/104__ice-flood-of-okunada__variant-base.jpeg"
+        }
+      ]
+    },
+    "105": {
+      "set_name": "set_1",
+      "card_id": "105",
+      "title_slug": "fist-of-verzar",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "105__fist-of-verzar__variant-base.jpeg",
+          "relative_path": "set_1/105__fist-of-verzar__variant-base.jpeg"
+        }
+      ]
+    },
+    "106": {
+      "set_name": "set_1",
+      "card_id": "106",
+      "title_slug": "wrathful-winds-of-juno",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "106__wrathful-winds-of-juno__variant-base.jpeg",
+          "relative_path": "set_1/106__wrathful-winds-of-juno__variant-base.jpeg"
+        }
+      ]
+    },
+    "107": {
+      "set_name": "set_1",
+      "card_id": "107",
+      "title_slug": "blinding-skies",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "107__blinding-skies__variant-base.jpeg",
+          "relative_path": "set_1/107__blinding-skies__variant-base.jpeg"
+        }
+      ]
+    },
+    "108": {
+      "set_name": "set_1",
+      "card_id": "108",
+      "title_slug": "scions-riotous-impunity",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "108__scions-riotous-impunity__variant-base.jpeg",
+          "relative_path": "set_1/108__scions-riotous-impunity__variant-base.jpeg"
+        }
+      ]
+    },
+    "109": {
+      "set_name": "set_1",
+      "card_id": "109",
+      "title_slug": "seer-vizaks-calamity",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "109__seer-vizaks-calamity__variant-base.jpeg",
+          "relative_path": "set_1/109__seer-vizaks-calamity__variant-base.jpeg"
+        }
+      ]
+    },
+    "110": {
+      "set_name": "set_1",
+      "card_id": "110",
+      "title_slug": "call-of-timeless-juno",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "110__call-of-timeless-juno__variant-base.jpeg",
+          "relative_path": "set_1/110__call-of-timeless-juno__variant-base.jpeg"
+        }
+      ]
+    },
+    "111": {
+      "set_name": "set_2",
+      "card_id": "111",
+      "title_slug": "flame-novice",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "111__flame-novice__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/111__flame-novice__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "112": {
+      "set_name": "set_2",
+      "card_id": "112",
+      "title_slug": "flame-guard-recruit",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "112__flame-guard-recruit__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/112__flame-guard-recruit__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "113": {
+      "set_name": "set_2",
+      "card_id": "113",
+      "title_slug": "flame-lizard-archer",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "113__flame-lizard-archer__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/113__flame-lizard-archer__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "114": {
+      "set_name": "set_2",
+      "card_id": "114",
+      "title_slug": "partmole-warhound",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "114__partmole-warhound__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/114__partmole-warhound__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "115": {
+      "set_name": "set_2",
+      "card_id": "115",
+      "title_slug": "partmole-axethrower",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "115__partmole-axethrower__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/115__partmole-axethrower__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "116": {
+      "set_name": "set_2",
+      "card_id": "116",
+      "title_slug": "beacon-of-cai-shae",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "116__beacon-of-cai-shae__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/116__beacon-of-cai-shae__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "117": {
+      "set_name": "set_2",
+      "card_id": "117",
+      "title_slug": "shrine-of-mourning",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "117__shrine-of-mourning__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/117__shrine-of-mourning__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "118": {
+      "set_name": "set_2",
+      "card_id": "118",
+      "title_slug": "behemorph",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "118__behemorph__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/118__behemorph__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "119": {
+      "set_name": "set_2",
+      "card_id": "119",
+      "title_slug": "flame-lizard-commander",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "119__flame-lizard-commander__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/119__flame-lizard-commander__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "120": {
+      "set_name": "set_2",
+      "card_id": "120",
+      "title_slug": "parmetic-deathspeaker",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "promo",
+          "variant_index": "01",
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "120__parmetic-deathspeaker__variant-promo__alt-01.jpeg",
+          "relative_path": "set_2/120__parmetic-deathspeaker__variant-promo__alt-01.jpeg"
+        },
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "120__parmetic-deathspeaker__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/120__parmetic-deathspeaker__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "121": {
+      "set_name": "set_2",
+      "card_id": "121",
+      "title_slug": "noram-zealot",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "promo",
+          "variant_index": "01",
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "121__noram-zealot__variant-promo__alt-01.jpeg",
+          "relative_path": "set_2/121__noram-zealot__variant-promo__alt-01.jpeg"
+        },
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "121__noram-zealot__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/121__noram-zealot__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "122": {
+      "set_name": "set_2",
+      "card_id": "122",
+      "title_slug": "flame-archmage",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "122__flame-archmage__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/122__flame-archmage__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "123": {
+      "set_name": "set_2",
+      "card_id": "123",
+      "title_slug": "flameheart",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "123__flameheart__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/123__flameheart__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "124": {
+      "set_name": "set_2",
+      "card_id": "124",
+      "title_slug": "fire-witch-freedonia",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "phantom",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "124__fire-witch-freedonia__variant-phantom__rev-01.jpeg",
+          "relative_path": "set_2/124__fire-witch-freedonia__variant-phantom__rev-01.jpeg"
+        },
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "124__fire-witch-freedonia__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/124__fire-witch-freedonia__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "125": {
+      "set_name": "set_2",
+      "card_id": "125",
+      "title_slug": "shaman-zolda",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "125__shaman-zolda__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/125__shaman-zolda__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "126": {
+      "set_name": "set_2",
+      "card_id": "126",
+      "title_slug": "general-lug",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "promo",
+          "variant_index": "03",
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "126__general-lug__variant-promo__alt-03.jpeg",
+          "relative_path": "set_2/126__general-lug__variant-promo__alt-03.jpeg"
+        },
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "126__general-lug__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/126__general-lug__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "127": {
+      "set_name": "set_2",
+      "card_id": "127",
+      "title_slug": "cloudrunner-marauder",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "127__cloudrunner-marauder__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/127__cloudrunner-marauder__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "128": {
+      "set_name": "set_2",
+      "card_id": "128",
+      "title_slug": "queens-courier",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "128__queens-courier__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/128__queens-courier__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "129": {
+      "set_name": "set_2",
+      "card_id": "129",
+      "title_slug": "frost-guards",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "129__frost-guards__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/129__frost-guards__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "130": {
+      "set_name": "set_2",
+      "card_id": "130",
+      "title_slug": "venoan-spy",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "130__venoan-spy__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/130__venoan-spy__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "131": {
+      "set_name": "set_2",
+      "card_id": "131",
+      "title_slug": "siams-lookout",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "131__siams-lookout__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/131__siams-lookout__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "132": {
+      "set_name": "set_2",
+      "card_id": "132",
+      "title_slug": "aluhja-moving-citadel",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "132__aluhja-moving-citadel__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/132__aluhja-moving-citadel__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "133": {
+      "set_name": "set_2",
+      "card_id": "133",
+      "title_slug": "ghost-ship",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "133__ghost-ship__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/133__ghost-ship__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "134": {
+      "set_name": "set_2",
+      "card_id": "134",
+      "title_slug": "shadow-diver",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "134__shadow-diver__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/134__shadow-diver__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "135": {
+      "set_name": "set_2",
+      "card_id": "135",
+      "title_slug": "ships-surgeon",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "135__ships-surgeon__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/135__ships-surgeon__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "136": {
+      "set_name": "set_2",
+      "card_id": "136",
+      "title_slug": "okunada-moving-temple",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "136__okunada-moving-temple__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/136__okunada-moving-temple__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "137": {
+      "set_name": "set_2",
+      "card_id": "137",
+      "title_slug": "aluhja-zealot",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "137__aluhja-zealot__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/137__aluhja-zealot__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "138": {
+      "set_name": "set_2",
+      "card_id": "138",
+      "title_slug": "queens-emissary",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "138__queens-emissary__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/138__queens-emissary__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "139": {
+      "set_name": "set_2",
+      "card_id": "139",
+      "title_slug": "aluhja-inquisitrix",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "139__aluhja-inquisitrix__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/139__aluhja-inquisitrix__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "140": {
+      "set_name": "set_2",
+      "card_id": "140",
+      "title_slug": "sarma-of-tinoa",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "phantom",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "140__sarma-of-tinoa__variant-phantom__rev-01.jpeg",
+          "relative_path": "set_2/140__sarma-of-tinoa__variant-phantom__rev-01.jpeg"
+        },
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "140__sarma-of-tinoa__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/140__sarma-of-tinoa__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "141": {
+      "set_name": "set_2",
+      "card_id": "141",
+      "title_slug": "corleo-venoan-capo",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "141__corleo-venoan-capo__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/141__corleo-venoan-capo__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "142": {
+      "set_name": "set_2",
+      "card_id": "142",
+      "title_slug": "admiral-belta",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "142__admiral-belta__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/142__admiral-belta__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "143": {
+      "set_name": "set_2",
+      "card_id": "143",
+      "title_slug": "verzar-swordsman",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "143__verzar-swordsman__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/143__verzar-swordsman__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "144": {
+      "set_name": "set_2",
+      "card_id": "144",
+      "title_slug": "relentless-skeleton",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "144__relentless-skeleton__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/144__relentless-skeleton__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "145": {
+      "set_name": "set_2",
+      "card_id": "145",
+      "title_slug": "far-land-sand-dog",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "145__far-land-sand-dog__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/145__far-land-sand-dog__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "146": {
+      "set_name": "set_2",
+      "card_id": "146",
+      "title_slug": "dwarf-sniper",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "146__dwarf-sniper__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/146__dwarf-sniper__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "147": {
+      "set_name": "set_2",
+      "card_id": "147",
+      "title_slug": "battering-ram",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "147__battering-ram__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/147__battering-ram__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "148": {
+      "set_name": "set_2",
+      "card_id": "148",
+      "title_slug": "novogus-bandwagon",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "148__novogus-bandwagon__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/148__novogus-bandwagon__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "149": {
+      "set_name": "set_2",
+      "card_id": "149",
+      "title_slug": "novogus-warrior",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "149__novogus-warrior__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/149__novogus-warrior__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "150": {
+      "set_name": "set_2",
+      "card_id": "150",
+      "title_slug": "verzar-golem",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "150__verzar-golem__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/150__verzar-golem__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "151": {
+      "set_name": "set_2",
+      "card_id": "151",
+      "title_slug": "dwarf-battlebuggy",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "151__dwarf-battlebuggy__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/151__dwarf-battlebuggy__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "152": {
+      "set_name": "set_2",
+      "card_id": "152",
+      "title_slug": "dwarf-warbanner",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "152__dwarf-warbanner__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/152__dwarf-warbanner__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "153": {
+      "set_name": "set_2",
+      "card_id": "153",
+      "title_slug": "dwarf-battle-forge",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "153__dwarf-battle-forge__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/153__dwarf-battle-forge__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "154": {
+      "set_name": "set_2",
+      "card_id": "154",
+      "title_slug": "visvar-vaas-zealot",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "154__visvar-vaas-zealot__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/154__visvar-vaas-zealot__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "155": {
+      "set_name": "set_2",
+      "card_id": "155",
+      "title_slug": "novogus-sinbearer",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "155__novogus-sinbearer__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/155__novogus-sinbearer__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "156": {
+      "set_name": "set_2",
+      "card_id": "156",
+      "title_slug": "archbishop-jirva",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "phantom",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "156__archbishop-jirva__variant-phantom__rev-01.jpeg",
+          "relative_path": "set_2/156__archbishop-jirva__variant-phantom__rev-01.jpeg"
+        },
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "156__archbishop-jirva__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/156__archbishop-jirva__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "157": {
+      "set_name": "set_2",
+      "card_id": "157",
+      "title_slug": "vamas-tomb-sentinel",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "157__vamas-tomb-sentinel__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/157__vamas-tomb-sentinel__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "158": {
+      "set_name": "set_2",
+      "card_id": "158",
+      "title_slug": "marshal-akhum",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "158__marshal-akhum__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/158__marshal-akhum__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "159": {
+      "set_name": "set_2",
+      "card_id": "159",
+      "title_slug": "tree-foxes",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "159__tree-foxes__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/159__tree-foxes__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "160": {
+      "set_name": "set_2",
+      "card_id": "160",
+      "title_slug": "elven-soul-hunter",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "160__elven-soul-hunter__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/160__elven-soul-hunter__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "161": {
+      "set_name": "set_2",
+      "card_id": "161",
+      "title_slug": "white-tree-haunt",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "161__white-tree-haunt__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/161__white-tree-haunt__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "162": {
+      "set_name": "set_2",
+      "card_id": "162",
+      "title_slug": "leapfrog-boss",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "162__leapfrog-boss__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/162__leapfrog-boss__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "163": {
+      "set_name": "set_2",
+      "card_id": "163",
+      "title_slug": "elven-plaguedancer",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "163__elven-plaguedancer__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/163__elven-plaguedancer__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "164": {
+      "set_name": "set_2",
+      "card_id": "164",
+      "title_slug": "goblin-basher",
+      "review_flags": [
+        "duplicate_title_across_card_ids"
+      ],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "164__goblin-basher__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/164__goblin-basher__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "165": {
+      "set_name": "set_2",
+      "card_id": "165",
+      "title_slug": "goblin-basher",
+      "review_flags": [
+        "duplicate_title_across_card_ids"
+      ],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "165__goblin-basher__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/165__goblin-basher__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "166": {
+      "set_name": "set_2",
+      "card_id": "166",
+      "title_slug": "darksword-samurai",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "166__darksword-samurai__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/166__darksword-samurai__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "167": {
+      "set_name": "set_2",
+      "card_id": "167",
+      "title_slug": "goblin-fort",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "167__goblin-fort__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/167__goblin-fort__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "168": {
+      "set_name": "set_2",
+      "card_id": "168",
+      "title_slug": "reapers-golem",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "168__reapers-golem__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/168__reapers-golem__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "169": {
+      "set_name": "set_2",
+      "card_id": "169",
+      "title_slug": "tolicore-zealot",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "169__tolicore-zealot__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/169__tolicore-zealot__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "170": {
+      "set_name": "set_2",
+      "card_id": "170",
+      "title_slug": "alchemists-lab",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "170__alchemists-lab__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/170__alchemists-lab__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "171": {
+      "set_name": "set_2",
+      "card_id": "171",
+      "title_slug": "elven-night-rider",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "171__elven-night-rider__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/171__elven-night-rider__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "172": {
+      "set_name": "set_2",
+      "card_id": "172",
+      "title_slug": "prince-lusirion",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "phantom",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "172__prince-lusirion__variant-phantom__rev-01.jpeg",
+          "relative_path": "set_2/172__prince-lusirion__variant-phantom__rev-01.jpeg"
+        },
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "172__prince-lusirion__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/172__prince-lusirion__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "173": {
+      "set_name": "set_2",
+      "card_id": "173",
+      "title_slug": "preacher-noova",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "173__preacher-noova__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/173__preacher-noova__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "174": {
+      "set_name": "set_2",
+      "card_id": "174",
+      "title_slug": "lord-hu",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "174__lord-hu__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/174__lord-hu__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "175": {
+      "set_name": "set_2",
+      "card_id": "175",
+      "title_slug": "athenix-citadel",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "175__athenix-citadel__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/175__athenix-citadel__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "176": {
+      "set_name": "set_2",
+      "card_id": "176",
+      "title_slug": "flailmonger",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "176__flailmonger__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/176__flailmonger__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "177": {
+      "set_name": "set_2",
+      "card_id": "177",
+      "title_slug": "biolith-centurion",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "177__biolith-centurion__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/177__biolith-centurion__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "178": {
+      "set_name": "set_2",
+      "card_id": "178",
+      "title_slug": "biolith-war-chariot",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "178__biolith-war-chariot__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/178__biolith-war-chariot__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "179": {
+      "set_name": "set_2",
+      "card_id": "179",
+      "title_slug": "behemoth-terrorformer",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "179__behemoth-terrorformer__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/179__behemoth-terrorformer__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "180": {
+      "set_name": "set_2",
+      "card_id": "180",
+      "title_slug": "biolith-transporter",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "180__biolith-transporter__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/180__biolith-transporter__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "181": {
+      "set_name": "set_2",
+      "card_id": "181",
+      "title_slug": "archiver",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "181__archiver__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/181__archiver__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "182": {
+      "set_name": "set_2",
+      "card_id": "182",
+      "title_slug": "battle-master",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "182__battle-master__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/182__battle-master__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "183": {
+      "set_name": "set_2",
+      "card_id": "183",
+      "title_slug": "magic-master",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "183__magic-master__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/183__magic-master__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "184": {
+      "set_name": "set_2",
+      "card_id": "184",
+      "title_slug": "biolith-battleship",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "184__biolith-battleship__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/184__biolith-battleship__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "185": {
+      "set_name": "set_2",
+      "card_id": "185",
+      "title_slug": "biolith-temple",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "185__biolith-temple__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/185__biolith-temple__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "186": {
+      "set_name": "set_2",
+      "card_id": "186",
+      "title_slug": "sciondar-gateway",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "186__sciondar-gateway__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/186__sciondar-gateway__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "187": {
+      "set_name": "set_2",
+      "card_id": "187",
+      "title_slug": "sword-of-juno",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "187__sword-of-juno__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/187__sword-of-juno__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "188": {
+      "set_name": "set_2",
+      "card_id": "188",
+      "title_slug": "hammer-of-juno",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "188__hammer-of-juno__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/188__hammer-of-juno__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "189": {
+      "set_name": "set_2",
+      "card_id": "189",
+      "title_slug": "spire-of-juno",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "189__spire-of-juno__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/189__spire-of-juno__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "190": {
+      "set_name": "set_2",
+      "card_id": "190",
+      "title_slug": "fist-of-juno",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "190__fist-of-juno__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/190__fist-of-juno__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "191": {
+      "set_name": "set_2",
+      "card_id": "191",
+      "title_slug": "absolver-sacrament",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "191__absolver-sacrament__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/191__absolver-sacrament__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "192": {
+      "set_name": "set_2",
+      "card_id": "192",
+      "title_slug": "granvenoa-altar",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "192__granvenoa-altar__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/192__granvenoa-altar__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "193": {
+      "set_name": "set_2",
+      "card_id": "193",
+      "title_slug": "caisen-riot",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "193__caisen-riot__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/193__caisen-riot__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "194": {
+      "set_name": "set_2",
+      "card_id": "194",
+      "title_slug": "elven-dismissal",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "194__elven-dismissal__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/194__elven-dismissal__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "195": {
+      "set_name": "set_2",
+      "card_id": "195",
+      "title_slug": "dhees-command",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "195__dhees-command__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/195__dhees-command__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "196": {
+      "set_name": "set_2",
+      "card_id": "196",
+      "title_slug": "aluhjan-regeneration",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "196__aluhjan-regeneration__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/196__aluhjan-regeneration__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "197": {
+      "set_name": "set_2",
+      "card_id": "197",
+      "title_slug": "lament-for-clar-wil",
+      "review_flags": [
+        "title_review_clar_vs_clare_wil"
+      ],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "197__lament-for-clar-wil__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/197__lament-for-clar-wil__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "198": {
+      "set_name": "set_2",
+      "card_id": "198",
+      "title_slug": "mesmers-envoy",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "198__mesmers-envoy__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/198__mesmers-envoy__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "199": {
+      "set_name": "set_2",
+      "card_id": "199",
+      "title_slug": "ninja-fate-enhancer",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "199__ninja-fate-enhancer__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/199__ninja-fate-enhancer__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "200": {
+      "set_name": "set_2",
+      "card_id": "200",
+      "title_slug": "binding-shadows",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "200__binding-shadows__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/200__binding-shadows__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "201": {
+      "set_name": "set_2",
+      "card_id": "201",
+      "title_slug": "aluhjan-fieldbond",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "201__aluhjan-fieldbond__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/201__aluhjan-fieldbond__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "202": {
+      "set_name": "set_2",
+      "card_id": "202",
+      "title_slug": "aluhjan-spellshield",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "202__aluhjan-spellshield__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/202__aluhjan-spellshield__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "203": {
+      "set_name": "set_2",
+      "card_id": "203",
+      "title_slug": "festival-of-fire",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "203__festival-of-fire__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/203__festival-of-fire__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "204": {
+      "set_name": "set_2",
+      "card_id": "204",
+      "title_slug": "festival-of-water",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "204__festival-of-water__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/204__festival-of-water__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "205": {
+      "set_name": "set_2",
+      "card_id": "205",
+      "title_slug": "festival-of-earth",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "205__festival-of-earth__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/205__festival-of-earth__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "206": {
+      "set_name": "set_2",
+      "card_id": "206",
+      "title_slug": "festival-of-wood",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "206__festival-of-wood__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/206__festival-of-wood__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "207": {
+      "set_name": "set_2",
+      "card_id": "207",
+      "title_slug": "biolith-ascension",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "207__biolith-ascension__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/207__biolith-ascension__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "208": {
+      "set_name": "set_2",
+      "card_id": "208",
+      "title_slug": "scions-revelation",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "208__scions-revelation__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/208__scions-revelation__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "209": {
+      "set_name": "set_2",
+      "card_id": "209",
+      "title_slug": "seer-vizaks-cleansing",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "01",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "209__seer-vizaks-cleansing__variant-base__rev-01.jpeg",
+          "relative_path": "set_2/209__seer-vizaks-cleansing__variant-base__rev-01.jpeg"
+        }
+      ]
+    },
+    "210": {
+      "set_name": "set_2",
+      "card_id": "210",
+      "title_slug": "benediction-of-juno",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": "02",
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "210__benediction-of-juno__variant-base__rev-02.jpeg",
+          "relative_path": "set_2/210__benediction-of-juno__variant-base__rev-02.jpeg"
+        }
+      ]
+    },
+    "211": {
+      "set_name": "set_3",
+      "card_id": "211",
+      "title_slug": "partmole-gatekeeper",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "211__partmole-gatekeeper__variant-base.jpeg",
+          "relative_path": "set_3/211__partmole-gatekeeper__variant-base.jpeg"
+        }
+      ]
+    },
+    "212": {
+      "set_name": "set_3",
+      "card_id": "212",
+      "title_slug": "rageflame-spitter",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "212__rageflame-spitter__variant-base.jpeg",
+          "relative_path": "set_3/212__rageflame-spitter__variant-base.jpeg"
+        }
+      ]
+    },
+    "213": {
+      "set_name": "set_3",
+      "card_id": "213",
+      "title_slug": "fire-witchs-familiar",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "213__fire-witchs-familiar__variant-base.jpeg",
+          "relative_path": "set_3/213__fire-witchs-familiar__variant-base.jpeg"
+        }
+      ]
+    },
+    "214": {
+      "set_name": "set_3",
+      "card_id": "214",
+      "title_slug": "crimson-mimic",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "214__crimson-mimic__variant-base.jpeg",
+          "relative_path": "set_3/214__crimson-mimic__variant-base.jpeg"
+        }
+      ]
+    },
+    "215": {
+      "set_name": "set_3",
+      "card_id": "215",
+      "title_slug": "lizard-shocktrooper",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "215__lizard-shocktrooper__variant-base.jpeg",
+          "relative_path": "set_3/215__lizard-shocktrooper__variant-base.jpeg"
+        }
+      ]
+    },
+    "216": {
+      "set_name": "set_3",
+      "card_id": "216",
+      "title_slug": "flame-lizard-barracks",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "216__flame-lizard-barracks__variant-base.jpeg",
+          "relative_path": "set_3/216__flame-lizard-barracks__variant-base.jpeg"
+        }
+      ]
+    },
+    "217": {
+      "set_name": "set_3",
+      "card_id": "217",
+      "title_slug": "cai-shae-brazier",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "217__cai-shae-brazier__variant-base.jpeg",
+          "relative_path": "set_3/217__cai-shae-brazier__variant-base.jpeg"
+        }
+      ]
+    },
+    "218": {
+      "set_name": "set_3",
+      "card_id": "218",
+      "title_slug": "flame-wyvern",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "218__flame-wyvern__variant-base.jpeg",
+          "relative_path": "set_3/218__flame-wyvern__variant-base.jpeg"
+        }
+      ]
+    },
+    "219": {
+      "set_name": "set_3",
+      "card_id": "219",
+      "title_slug": "mourning-cenobite",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "219__mourning-cenobite__variant-base.jpeg",
+          "relative_path": "set_3/219__mourning-cenobite__variant-base.jpeg"
+        }
+      ]
+    },
+    "220": {
+      "set_name": "set_3",
+      "card_id": "220",
+      "title_slug": "mourning-buffalo",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "220__mourning-buffalo__variant-base.jpeg",
+          "relative_path": "set_3/220__mourning-buffalo__variant-base.jpeg"
+        }
+      ]
+    },
+    "221": {
+      "set_name": "set_3",
+      "card_id": "221",
+      "title_slug": "torrid-nightmare",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "221__torrid-nightmare__variant-base.jpeg",
+          "relative_path": "set_3/221__torrid-nightmare__variant-base.jpeg"
+        }
+      ]
+    },
+    "222": {
+      "set_name": "set_3",
+      "card_id": "222",
+      "title_slug": "flame-lizard-general",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "222__flame-lizard-general__variant-base.jpeg",
+          "relative_path": "set_3/222__flame-lizard-general__variant-base.jpeg"
+        }
+      ]
+    },
+    "223": {
+      "set_name": "set_3",
+      "card_id": "223",
+      "title_slug": "partmole-scout-balloon",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "223__partmole-scout-balloon__variant-base.jpeg",
+          "relative_path": "set_3/223__partmole-scout-balloon__variant-base.jpeg"
+        }
+      ]
+    },
+    "224": {
+      "set_name": "set_3",
+      "card_id": "224",
+      "title_slug": "logan-zurtur",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "224__logan-zurtur__variant-base.jpeg",
+          "relative_path": "set_3/224__logan-zurtur__variant-base.jpeg"
+        }
+      ]
+    },
+    "225": {
+      "set_name": "set_3",
+      "card_id": "225",
+      "title_slug": "raging-pyrathrax",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "225__raging-pyrathrax__variant-base.jpeg",
+          "relative_path": "set_3/225__raging-pyrathrax__variant-base.jpeg"
+        }
+      ]
+    },
+    "226": {
+      "set_name": "set_3",
+      "card_id": "226",
+      "title_slug": "carlo-the-scorched",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "text",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "226__carlo-the-scorched__variant-text.jpeg",
+          "relative_path": "set_3/226__carlo-the-scorched__variant-text.jpeg"
+        },
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "226__carlo-the-scorched__variant-base.jpeg",
+          "relative_path": "set_3/226__carlo-the-scorched__variant-base.jpeg"
+        }
+      ]
+    },
+    "227": {
+      "set_name": "set_3",
+      "card_id": "227",
+      "title_slug": "blue-lycanthrope",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "227__blue-lycanthrope__variant-base.jpeg",
+          "relative_path": "set_3/227__blue-lycanthrope__variant-base.jpeg"
+        }
+      ]
+    },
+    "228": {
+      "set_name": "set_3",
+      "card_id": "228",
+      "title_slug": "cloudrunner-shipmate",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "228__cloudrunner-shipmate__variant-base.jpeg",
+          "relative_path": "set_3/228__cloudrunner-shipmate__variant-base.jpeg"
+        }
+      ]
+    },
+    "229": {
+      "set_name": "set_3",
+      "card_id": "229",
+      "title_slug": "darkwater-syren",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "229__darkwater-syren__variant-base.jpeg",
+          "relative_path": "set_3/229__darkwater-syren__variant-base.jpeg"
+        }
+      ]
+    },
+    "230": {
+      "set_name": "set_3",
+      "card_id": "230",
+      "title_slug": "indigo-mimic",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "230__indigo-mimic__variant-base.jpeg",
+          "relative_path": "set_3/230__indigo-mimic__variant-base.jpeg"
+        }
+      ]
+    },
+    "231": {
+      "set_name": "set_3",
+      "card_id": "231",
+      "title_slug": "corsez-henchman",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "231__corsez-henchman__variant-base.jpeg",
+          "relative_path": "set_3/231__corsez-henchman__variant-base.jpeg"
+        }
+      ]
+    },
+    "232": {
+      "set_name": "set_3",
+      "card_id": "232",
+      "title_slug": "corsez-moving-castle",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "232__corsez-moving-castle__variant-base.jpeg",
+          "relative_path": "set_3/232__corsez-moving-castle__variant-base.jpeg"
+        }
+      ]
+    },
+    "233": {
+      "set_name": "set_3",
+      "card_id": "233",
+      "title_slug": "aluhja-prioress",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "233__aluhja-prioress__variant-base.jpeg",
+          "relative_path": "set_3/233__aluhja-prioress__variant-base.jpeg"
+        }
+      ]
+    },
+    "234": {
+      "set_name": "set_3",
+      "card_id": "234",
+      "title_slug": "sea-serpent",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "234__sea-serpent__variant-base.jpeg",
+          "relative_path": "set_3/234__sea-serpent__variant-base.jpeg"
+        }
+      ]
+    },
+    "235": {
+      "set_name": "set_3",
+      "card_id": "235",
+      "title_slug": "siams-sentinel",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "235__siams-sentinel__variant-base.jpeg",
+          "relative_path": "set_3/235__siams-sentinel__variant-base.jpeg"
+        }
+      ]
+    },
+    "236": {
+      "set_name": "set_3",
+      "card_id": "236",
+      "title_slug": "queens-commissioner",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "236__queens-commissioner__variant-base.jpeg",
+          "relative_path": "set_3/236__queens-commissioner__variant-base.jpeg"
+        }
+      ]
+    },
+    "237": {
+      "set_name": "set_3",
+      "card_id": "237",
+      "title_slug": "dons-double",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "237__dons-double__variant-base.jpeg",
+          "relative_path": "set_3/237__dons-double__variant-base.jpeg"
+        }
+      ]
+    },
+    "238": {
+      "set_name": "set_3",
+      "card_id": "238",
+      "title_slug": "tritonan-sacred-court",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "238__tritonan-sacred-court__variant-base.jpeg",
+          "relative_path": "set_3/238__tritonan-sacred-court__variant-base.jpeg"
+        }
+      ]
+    },
+    "239": {
+      "set_name": "set_3",
+      "card_id": "239",
+      "title_slug": "missionary-ship",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "239__missionary-ship__variant-base.jpeg",
+          "relative_path": "set_3/239__missionary-ship__variant-base.jpeg"
+        }
+      ]
+    },
+    "240": {
+      "set_name": "set_3",
+      "card_id": "240",
+      "title_slug": "reverend-father-vlo",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "240__reverend-father-vlo__variant-base.jpeg",
+          "relative_path": "set_3/240__reverend-father-vlo__variant-base.jpeg"
+        }
+      ]
+    },
+    "241": {
+      "set_name": "set_3",
+      "card_id": "241",
+      "title_slug": "capricious-hydromancer",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "241__capricious-hydromancer__variant-base.jpeg",
+          "relative_path": "set_3/241__capricious-hydromancer__variant-base.jpeg"
+        }
+      ]
+    },
+    "242": {
+      "set_name": "set_3",
+      "card_id": "242",
+      "title_slug": "clare-wil-the-valiant",
+      "review_flags": [
+        "title_review_clar_vs_clare_wil"
+      ],
+      "assets": [
+        {
+          "variant": "text",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "242__clare-wil-the-valiant__variant-text.jpeg",
+          "relative_path": "set_3/242__clare-wil-the-valiant__variant-text.jpeg"
+        },
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "242__clare-wil-the-valiant__variant-base.jpeg",
+          "relative_path": "set_3/242__clare-wil-the-valiant__variant-base.jpeg"
+        }
+      ]
+    },
+    "243": {
+      "set_name": "set_3",
+      "card_id": "243",
+      "title_slug": "skeleton-archer",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "243__skeleton-archer__variant-base.jpeg",
+          "relative_path": "set_3/243__skeleton-archer__variant-base.jpeg"
+        }
+      ]
+    },
+    "244": {
+      "set_name": "set_3",
+      "card_id": "244",
+      "title_slug": "verzar-defender",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "244__verzar-defender__variant-base.jpeg",
+          "relative_path": "set_3/244__verzar-defender__variant-base.jpeg"
+        }
+      ]
+    },
+    "245": {
+      "set_name": "set_3",
+      "card_id": "245",
+      "title_slug": "stone-wing-veteran",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "245__stone-wing-veteran__variant-base.jpeg",
+          "relative_path": "set_3/245__stone-wing-veteran__variant-base.jpeg"
+        }
+      ]
+    },
+    "246": {
+      "set_name": "set_3",
+      "card_id": "246",
+      "title_slug": "ochre-mimic",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "246__ochre-mimic__variant-base.jpeg",
+          "relative_path": "set_3/246__ochre-mimic__variant-base.jpeg"
+        }
+      ]
+    },
+    "247": {
+      "set_name": "set_3",
+      "card_id": "247",
+      "title_slug": "dwatf-miner",
+      "review_flags": [
+        "possible_typo_dwatf_vs_dwarf"
+      ],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "247__dwatf-miner__variant-base.jpeg",
+          "relative_path": "set_3/247__dwatf-miner__variant-base.jpeg"
+        }
+      ]
+    },
+    "248": {
+      "set_name": "set_3",
+      "card_id": "248",
+      "title_slug": "forgotten-fortress",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "248__forgotten-fortress__variant-base.jpeg",
+          "relative_path": "set_3/248__forgotten-fortress__variant-base.jpeg"
+        }
+      ]
+    },
+    "249": {
+      "set_name": "set_3",
+      "card_id": "249",
+      "title_slug": "roving-penitentiary",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "249__roving-penitentiary__variant-base.jpeg",
+          "relative_path": "set_3/249__roving-penitentiary__variant-base.jpeg"
+        }
+      ]
+    },
+    "250": {
+      "set_name": "set_3",
+      "card_id": "250",
+      "title_slug": "bone-drake",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "250__bone-drake__variant-base.jpeg",
+          "relative_path": "set_3/250__bone-drake__variant-base.jpeg"
+        }
+      ]
+    },
+    "251": {
+      "set_name": "set_3",
+      "card_id": "251",
+      "title_slug": "blackhood-anti-mystic",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "251__blackhood-anti-mystic__variant-base.jpeg",
+          "relative_path": "set_3/251__blackhood-anti-mystic__variant-base.jpeg"
+        }
+      ]
+    },
+    "252": {
+      "set_name": "set_3",
+      "card_id": "252",
+      "title_slug": "novogus-war-mammoth",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "252__novogus-war-mammoth__variant-base.jpeg",
+          "relative_path": "set_3/252__novogus-war-mammoth__variant-base.jpeg"
+        }
+      ]
+    },
+    "253": {
+      "set_name": "set_3",
+      "card_id": "253",
+      "title_slug": "dark-ozeki-kihomaru",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "253__dark-ozeki-kihomaru__variant-base.jpeg",
+          "relative_path": "set_3/253__dark-ozeki-kihomaru__variant-base.jpeg"
+        }
+      ]
+    },
+    "254": {
+      "set_name": "set_3",
+      "card_id": "254",
+      "title_slug": "blackhood-caravan",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "254__blackhood-caravan__variant-base.jpeg",
+          "relative_path": "set_3/254__blackhood-caravan__variant-base.jpeg"
+        }
+      ]
+    },
+    "255": {
+      "set_name": "set_3",
+      "card_id": "255",
+      "title_slug": "parmetic-vengeress",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "255__parmetic-vengeress__variant-base.jpeg",
+          "relative_path": "set_3/255__parmetic-vengeress__variant-base.jpeg"
+        }
+      ]
+    },
+    "256": {
+      "set_name": "set_3",
+      "card_id": "256",
+      "title_slug": "captain-xerabis",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "256__captain-xerabis__variant-base.jpeg",
+          "relative_path": "set_3/256__captain-xerabis__variant-base.jpeg"
+        }
+      ]
+    },
+    "257": {
+      "set_name": "set_3",
+      "card_id": "257",
+      "title_slug": "callous-gaiakhan",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "257__callous-gaiakhan__variant-base.jpeg",
+          "relative_path": "set_3/257__callous-gaiakhan__variant-base.jpeg"
+        }
+      ]
+    },
+    "258": {
+      "set_name": "set_3",
+      "card_id": "258",
+      "title_slug": "king-sanavaan",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "text",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "258__king-sanavaan__variant-text.jpeg",
+          "relative_path": "set_3/258__king-sanavaan__variant-text.jpeg"
+        },
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "258__king-sanavaan__variant-base.jpeg",
+          "relative_path": "set_3/258__king-sanavaan__variant-base.jpeg"
+        }
+      ]
+    },
+    "259": {
+      "set_name": "set_3",
+      "card_id": "259",
+      "title_slug": "goblin-fanfare",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "259__goblin-fanfare__variant-base.jpeg",
+          "relative_path": "set_3/259__goblin-fanfare__variant-base.jpeg"
+        }
+      ]
+    },
+    "260": {
+      "set_name": "set_3",
+      "card_id": "260",
+      "title_slug": "slumbertrap",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "260__slumbertrap__variant-base.jpeg",
+          "relative_path": "set_3/260__slumbertrap__variant-base.jpeg"
+        }
+      ]
+    },
+    "261": {
+      "set_name": "set_3",
+      "card_id": "261",
+      "title_slug": "elven-berserker-witch",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "261__elven-berserker-witch__variant-base.jpeg",
+          "relative_path": "set_3/261__elven-berserker-witch__variant-base.jpeg"
+        }
+      ]
+    },
+    "262": {
+      "set_name": "set_3",
+      "card_id": "262",
+      "title_slug": "jade-mimic",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "262__jade-mimic__variant-base.jpeg",
+          "relative_path": "set_3/262__jade-mimic__variant-base.jpeg"
+        }
+      ]
+    },
+    "263": {
+      "set_name": "set_3",
+      "card_id": "263",
+      "title_slug": "bewitching-elf-huntress",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "263__bewitching-elf-huntress__variant-base.jpeg",
+          "relative_path": "set_3/263__bewitching-elf-huntress__variant-base.jpeg"
+        }
+      ]
+    },
+    "264": {
+      "set_name": "set_3",
+      "card_id": "264",
+      "title_slug": "juno-spirit-fox",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "264__juno-spirit-fox__variant-base.jpeg",
+          "relative_path": "set_3/264__juno-spirit-fox__variant-base.jpeg"
+        }
+      ]
+    },
+    "265": {
+      "set_name": "set_3",
+      "card_id": "265",
+      "title_slug": "goblin-chickenrider",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "265__goblin-chickenrider__variant-base.jpeg",
+          "relative_path": "set_3/265__goblin-chickenrider__variant-base.jpeg"
+        }
+      ]
+    },
+    "266": {
+      "set_name": "set_3",
+      "card_id": "266",
+      "title_slug": "arboreal-wyrm",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "266__arboreal-wyrm__variant-base.jpeg",
+          "relative_path": "set_3/266__arboreal-wyrm__variant-base.jpeg"
+        }
+      ]
+    },
+    "267": {
+      "set_name": "set_3",
+      "card_id": "267",
+      "title_slug": "leapfrog-warchief",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "267__leapfrog-warchief__variant-base.jpeg",
+          "relative_path": "set_3/267__leapfrog-warchief__variant-base.jpeg"
+        }
+      ]
+    },
+    "268": {
+      "set_name": "set_3",
+      "card_id": "268",
+      "title_slug": "elven-scout-mistress",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "268__elven-scout-mistress__variant-base.jpeg",
+          "relative_path": "set_3/268__elven-scout-mistress__variant-base.jpeg"
+        }
+      ]
+    },
+    "269": {
+      "set_name": "set_3",
+      "card_id": "269",
+      "title_slug": "berserker-princess",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "269__berserker-princess__variant-base.jpeg",
+          "relative_path": "set_3/269__berserker-princess__variant-base.jpeg"
+        }
+      ]
+    },
+    "270": {
+      "set_name": "set_3",
+      "card_id": "270",
+      "title_slug": "moggy-howdah",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "270__moggy-howdah__variant-base.jpeg",
+          "relative_path": "set_3/270__moggy-howdah__variant-base.jpeg"
+        }
+      ]
+    },
+    "271": {
+      "set_name": "set_3",
+      "card_id": "271",
+      "title_slug": "ronin-nagirashu",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "271__ronin-nagirashu__variant-base.jpeg",
+          "relative_path": "set_3/271__ronin-nagirashu__variant-base.jpeg"
+        }
+      ]
+    },
+    "272": {
+      "set_name": "set_3",
+      "card_id": "272",
+      "title_slug": "mandragora-triplet",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "272__mandragora-triplet__variant-base.jpeg",
+          "relative_path": "set_3/272__mandragora-triplet__variant-base.jpeg"
+        }
+      ]
+    },
+    "273": {
+      "set_name": "set_3",
+      "card_id": "273",
+      "title_slug": "wild-dendrovort",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "273__wild-dendrovort__variant-base.jpeg",
+          "relative_path": "set_3/273__wild-dendrovort__variant-base.jpeg"
+        }
+      ]
+    },
+    "274": {
+      "set_name": "set_3",
+      "card_id": "274",
+      "title_slug": "pope-queen-cyrstin-ii",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "text",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "274__pope-queen-cyrstin-ii__variant-text.jpeg",
+          "relative_path": "set_3/274__pope-queen-cyrstin-ii__variant-text.jpeg"
+        },
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "274__pope-queen-cyrstin-ii__variant-base.jpeg",
+          "relative_path": "set_3/274__pope-queen-cyrstin-ii__variant-base.jpeg"
+        }
+      ]
+    },
+    "275": {
+      "set_name": "set_3",
+      "card_id": "275",
+      "title_slug": "architekt",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "275__architekt__variant-base.jpeg",
+          "relative_path": "set_3/275__architekt__variant-base.jpeg"
+        }
+      ]
+    },
+    "276": {
+      "set_name": "set_3",
+      "card_id": "276",
+      "title_slug": "biolith-transmorph",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "276__biolith-transmorph__variant-base.jpeg",
+          "relative_path": "set_3/276__biolith-transmorph__variant-base.jpeg"
+        }
+      ]
+    },
+    "277": {
+      "set_name": "set_3",
+      "card_id": "277",
+      "title_slug": "barrager",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "277__barrager__variant-base.jpeg",
+          "relative_path": "set_3/277__barrager__variant-base.jpeg"
+        }
+      ]
+    },
+    "278": {
+      "set_name": "set_3",
+      "card_id": "278",
+      "title_slug": "biolith-deathgarden",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "278__biolith-deathgarden__variant-base.jpeg",
+          "relative_path": "set_3/278__biolith-deathgarden__variant-base.jpeg"
+        }
+      ]
+    },
+    "279": {
+      "set_name": "set_3",
+      "card_id": "279",
+      "title_slug": "toxic-intruder",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "279__toxic-intruder__variant-base.jpeg",
+          "relative_path": "set_3/279__toxic-intruder__variant-base.jpeg"
+        }
+      ]
+    },
+    "280": {
+      "set_name": "set_3",
+      "card_id": "280",
+      "title_slug": "biolith-sentry",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "280__biolith-sentry__variant-base.jpeg",
+          "relative_path": "set_3/280__biolith-sentry__variant-base.jpeg"
+        }
+      ]
+    },
+    "281": {
+      "set_name": "set_3",
+      "card_id": "281",
+      "title_slug": "biolith-mage-guard",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "281__biolith-mage-guard__variant-base.jpeg",
+          "relative_path": "set_3/281__biolith-mage-guard__variant-base.jpeg"
+        }
+      ]
+    },
+    "282": {
+      "set_name": "set_3",
+      "card_id": "282",
+      "title_slug": "prototype-behemoth",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "282__prototype-behemoth__variant-base.jpeg",
+          "relative_path": "set_3/282__prototype-behemoth__variant-base.jpeg"
+        }
+      ]
+    },
+    "283": {
+      "set_name": "set_3",
+      "card_id": "283",
+      "title_slug": "scions-peace",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "283__scions-peace__variant-base.jpeg",
+          "relative_path": "set_3/283__scions-peace__variant-base.jpeg"
+        }
+      ]
+    },
+    "284": {
+      "set_name": "set_3",
+      "card_id": "284",
+      "title_slug": "centipede-tank",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "284__centipede-tank__variant-base.jpeg",
+          "relative_path": "set_3/284__centipede-tank__variant-base.jpeg"
+        }
+      ]
+    },
+    "285": {
+      "set_name": "set_3",
+      "card_id": "285",
+      "title_slug": "kastor",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "285__kastor__variant-base.jpeg",
+          "relative_path": "set_3/285__kastor__variant-base.jpeg"
+        }
+      ]
+    },
+    "286": {
+      "set_name": "set_3",
+      "card_id": "286",
+      "title_slug": "pollux",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "286__pollux__variant-base.jpeg",
+          "relative_path": "set_3/286__pollux__variant-base.jpeg"
+        }
+      ]
+    },
+    "287": {
+      "set_name": "set_3",
+      "card_id": "287",
+      "title_slug": "atomic-rudra",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "287__atomic-rudra__variant-base.jpeg",
+          "relative_path": "set_3/287__atomic-rudra__variant-base.jpeg"
+        }
+      ]
+    },
+    "288": {
+      "set_name": "set_3",
+      "card_id": "288",
+      "title_slug": "romili-reloaded",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "promo",
+          "variant_index": "03",
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "288__romili-reloaded__variant-promo__alt-03.jpeg",
+          "relative_path": "set_3/288__romili-reloaded__variant-promo__alt-03.jpeg"
+        },
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "288__romili-reloaded__variant-base.jpeg",
+          "relative_path": "set_3/288__romili-reloaded__variant-base.jpeg"
+        }
+      ]
+    },
+    "289": {
+      "set_name": "set_3",
+      "card_id": "289",
+      "title_slug": "scion-triumphant",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "text",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "289__scion-triumphant__variant-text.jpeg",
+          "relative_path": "set_3/289__scion-triumphant__variant-text.jpeg"
+        },
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "289__scion-triumphant__variant-base.jpeg",
+          "relative_path": "set_3/289__scion-triumphant__variant-base.jpeg"
+        }
+      ]
+    },
+    "290": {
+      "set_name": "set_3",
+      "card_id": "290",
+      "title_slug": "the-eye-of-juno",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "290__the-eye-of-juno__variant-base.jpeg",
+          "relative_path": "set_3/290__the-eye-of-juno__variant-base.jpeg"
+        }
+      ]
+    },
+    "291": {
+      "set_name": "set_3",
+      "card_id": "291",
+      "title_slug": "venoan-hard-bargain",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "291__venoan-hard-bargain__variant-base.jpeg",
+          "relative_path": "set_3/291__venoan-hard-bargain__variant-base.jpeg"
+        }
+      ]
+    },
+    "292": {
+      "set_name": "set_3",
+      "card_id": "292",
+      "title_slug": "corsez-oath",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "292__corsez-oath__variant-base.jpeg",
+          "relative_path": "set_3/292__corsez-oath__variant-base.jpeg"
+        }
+      ]
+    },
+    "293": {
+      "set_name": "set_3",
+      "card_id": "293",
+      "title_slug": "theraclave-tollgate",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "293__theraclave-tollgate__variant-base.jpeg",
+          "relative_path": "set_3/293__theraclave-tollgate__variant-base.jpeg"
+        }
+      ]
+    },
+    "294": {
+      "set_name": "set_3",
+      "card_id": "294",
+      "title_slug": "elven-subterfuge",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "294__elven-subterfuge__variant-base.jpeg",
+          "relative_path": "set_3/294__elven-subterfuge__variant-base.jpeg"
+        }
+      ]
+    },
+    "295": {
+      "set_name": "set_3",
+      "card_id": "295",
+      "title_slug": "se-hollyn-battle-hymn",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "295__se-hollyn-battle-hymn__variant-base.jpeg",
+          "relative_path": "set_3/295__se-hollyn-battle-hymn__variant-base.jpeg"
+        }
+      ]
+    },
+    "296": {
+      "set_name": "set_3",
+      "card_id": "296",
+      "title_slug": "parmetic-castigation",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "296__parmetic-castigation__variant-base.jpeg",
+          "relative_path": "set_3/296__parmetic-castigation__variant-base.jpeg"
+        }
+      ]
+    },
+    "297": {
+      "set_name": "set_3",
+      "card_id": "297",
+      "title_slug": "mesmers-lecture",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "297__mesmers-lecture__variant-base.jpeg",
+          "relative_path": "set_3/297__mesmers-lecture__variant-base.jpeg"
+        }
+      ]
+    },
+    "298": {
+      "set_name": "set_3",
+      "card_id": "298",
+      "title_slug": "drunken-demolition",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "298__drunken-demolition__variant-base.jpeg",
+          "relative_path": "set_3/298__drunken-demolition__variant-base.jpeg"
+        }
+      ]
+    },
+    "299": {
+      "set_name": "set_3",
+      "card_id": "299",
+      "title_slug": "mourning-reanimation",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "299__mourning-reanimation__variant-base.jpeg",
+          "relative_path": "set_3/299__mourning-reanimation__variant-base.jpeg"
+        }
+      ]
+    },
+    "300": {
+      "set_name": "set_3",
+      "card_id": "300",
+      "title_slug": "aluhja-seduction",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "300__aluhja-seduction__variant-base.jpeg",
+          "relative_path": "set_3/300__aluhja-seduction__variant-base.jpeg"
+        }
+      ]
+    },
+    "301": {
+      "set_name": "set_3",
+      "card_id": "301",
+      "title_slug": "yaksha-stimulants",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "301__yaksha-stimulants__variant-base.jpeg",
+          "relative_path": "set_3/301__yaksha-stimulants__variant-base.jpeg"
+        }
+      ]
+    },
+    "302": {
+      "set_name": "set_3",
+      "card_id": "302",
+      "title_slug": "yaksha-disguise",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "302__yaksha-disguise__variant-base.jpeg",
+          "relative_path": "set_3/302__yaksha-disguise__variant-base.jpeg"
+        }
+      ]
+    },
+    "303": {
+      "set_name": "set_3",
+      "card_id": "303",
+      "title_slug": "dhees-migration",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "303__dhees-migration__variant-base.jpeg",
+          "relative_path": "set_3/303__dhees-migration__variant-base.jpeg"
+        }
+      ]
+    },
+    "304": {
+      "set_name": "set_3",
+      "card_id": "304",
+      "title_slug": "building-the-granvil",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "304__building-the-granvil__variant-base.jpeg",
+          "relative_path": "set_3/304__building-the-granvil__variant-base.jpeg"
+        }
+      ]
+    },
+    "305": {
+      "set_name": "set_3",
+      "card_id": "305",
+      "title_slug": "vals-secret-message",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "305__vals-secret-message__variant-base.jpeg",
+          "relative_path": "set_3/305__vals-secret-message__variant-base.jpeg"
+        }
+      ]
+    },
+    "306": {
+      "set_name": "set_3",
+      "card_id": "306",
+      "title_slug": "the-new-capital",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "306__the-new-capital__variant-base.jpeg",
+          "relative_path": "set_3/306__the-new-capital__variant-base.jpeg"
+        }
+      ]
+    },
+    "307": {
+      "set_name": "set_3",
+      "card_id": "307",
+      "title_slug": "biolith-infestation",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": true,
+          "filename": "307__biolith-infestation__variant-base.jpeg",
+          "relative_path": "set_3/307__biolith-infestation__variant-base.jpeg"
+        }
+      ]
+    },
+    "308": {
+      "set_name": "set_3",
+      "card_id": "308",
+      "title_slug": "first-fall-of-scion",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "308__first-fall-of-scion__variant-base.jpeg",
+          "relative_path": "set_3/308__first-fall-of-scion__variant-base.jpeg"
+        }
+      ]
+    },
+    "309": {
+      "set_name": "set_3",
+      "card_id": "309",
+      "title_slug": "vizaks-proclamation",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "309__vizaks-proclamation__variant-base.jpeg",
+          "relative_path": "set_3/309__vizaks-proclamation__variant-base.jpeg"
+        }
+      ]
+    },
+    "310": {
+      "set_name": "set_3",
+      "card_id": "310",
+      "title_slug": "junos-admonition",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "310__junos-admonition__variant-base.jpeg",
+          "relative_path": "set_3/310__junos-admonition__variant-base.jpeg"
+        }
+      ]
+    },
+    "311": {
+      "set_name": "set_3",
+      "card_id": "311",
+      "title_slug": "dioskuri",
+      "review_flags": [],
+      "assets": [
+        {
+          "variant": "base",
+          "variant_index": null,
+          "asset_revision": null,
+          "processing_profile": "topaz-denoise",
+          "faceai": false,
+          "filename": "311__dioskuri__variant-base.jpeg",
+          "relative_path": "set_3/311__dioskuri__variant-base.jpeg"
+        }
+      ]
+    }
+  }
+}
