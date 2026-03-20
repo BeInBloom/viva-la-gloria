@@ -2,9 +2,11 @@ use std::{collections::BTreeMap, sync::Arc};
 
 use serde::{Deserialize, Serialize};
 
+use crate::{card_repo::ManifestRepo, pdf::PdfGenerator};
+
 #[derive(Clone)]
 pub struct AppState {
-    pub manifest: Arc<Manifest>,
+    pub pdf_service: Arc<PdfGenerator<ManifestRepo>>,
 }
 
 #[derive(Debug, Deserialize)]

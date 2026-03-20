@@ -1,54 +1,40 @@
 use std::time::Duration;
 
-use axum::{Json, extract::State, http::StatusCode};
+use axum::{Json, extract::State};
 use tokio::time::timeout;
 
 use crate::{
+    errors::{PdfError, PdfInternalError},
     models::{AppState, GeneratePdfRequest, GeneratePdfResponse},
-    pdf::{PdfError, generate_pdf as build_pdf},
 };
 
-const TIMEOUT_FOR_PDF_GENERATE: Duration = Duration::from_secs(2);
+const TIMEOUT_FOR_PDF_GENERATE: Duration = Duration::from_secs(1);
 
 pub async fn generate_pdf(
     State(state): State<AppState>,
     Json(payload): Json<GeneratePdfRequest>,
-) -> Result<Json<GeneratePdfResponse>, (StatusCode, String)> {
-    let manifest = state.manifest;
-    let card_ids: Vec<String> = payload
+) -> Result<Json<GeneratePdfResponse>, PdfError> {
+    let card_ids = payload
         .card_ids
         .into_iter()
         .map(normalize_card_id)
-        .collect();
+        .collect::<Vec<_>>();
 
-    let handle = tokio::task::spawn_blocking(move || build_pdf(&manifest, &card_ids));
-    let path = timeout(TIMEOUT_FOR_PDF_GENERATE, handle)
-        .await
-        .map_err(|_| internal_error("pdf generation timed out"))?
-        .map_err(|error| internal_error(format!("pdf task failed: {error}")))?
-        .map_err(pdf_error_response)?;
+    let path = timeout(
+        TIMEOUT_FOR_PDF_GENERATE,
+        state.pdf_service.generate(&card_ids),
+    )
+    .await
+    .map_err(|_| PdfInternalError::PdfGenerationTimedOut)??;
 
     let file_name = path
         .file_name()
         .and_then(|name| name.to_str())
-        .ok_or_else(|| internal_error("generated pdf path is missing file name"))?;
+        .ok_or(PdfInternalError::GeneratedPdfFileNameMissing)?;
 
     Ok(Json(GeneratePdfResponse {
         path: format!("/generated-pdf/{file_name}"),
     }))
-}
-
-#[inline]
-fn pdf_error_response(error: PdfError) -> (StatusCode, String) {
-    match error {
-        PdfError::BadRequest(error) => (StatusCode::BAD_REQUEST, error.to_string()),
-        PdfError::Internal(error) => internal_error(error.to_string()),
-    }
-}
-
-#[inline]
-fn internal_error(message: impl Into<String>) -> (StatusCode, String) {
-    (StatusCode::INTERNAL_SERVER_ERROR, message.into())
 }
 
 #[inline]

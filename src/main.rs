@@ -1,3 +1,6 @@
+mod card_repo;
+mod contracts;
+mod errors;
 mod handlers;
 mod models;
 mod pdf;
@@ -8,16 +11,21 @@ use axum::{Router, routing::post};
 use tower_http::services::{ServeDir, ServeFile};
 
 use crate::{
+    card_repo::ManifestRepo,
     handlers::generate_pdf,
     models::{AppState, Manifest},
+    pdf::PdfGenerator,
 };
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     let manifest: Manifest =
         serde_json::from_str(&tokio::fs::read_to_string("./manifest.json").await?)?;
+    let mainfest_repo = ManifestRepo::new(manifest);
+    let pdf_service = PdfGenerator::new(mainfest_repo);
+
     let state = AppState {
-        manifest: Arc::new(manifest),
+        pdf_service: Arc::new(pdf_service),
     };
 
     let app = Router::new()
