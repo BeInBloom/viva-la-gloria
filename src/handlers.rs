@@ -15,11 +15,7 @@ pub async fn generate_pdf(
         .map(normalize_card_id)
         .collect::<Vec<_>>();
 
-    let path = state
-        .pdf_service
-        .generate(&card_ids)
-        .await
-        .map_err(|_| PdfInternalError::PdfGenerationTimedOut)?;
+    let path = state.pdf_service.generate(&card_ids).await?;
 
     let file_name = path
         .file_name()
