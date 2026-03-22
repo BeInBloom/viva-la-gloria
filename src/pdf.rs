@@ -1,4 +1,5 @@
 use std::{
+    fs,
     path::{Path, PathBuf},
     sync::Arc,
     time::{SystemTime, UNIX_EPOCH},
@@ -6,6 +7,7 @@ use std::{
 
 use fpdf::{Fpdf, ImageOptions, Orientation, PageSize, Pdf, Unit, UnitVec2};
 use tokio::{sync::Semaphore, task};
+use tokio_util::sync::CancellationToken;
 
 use crate::{
     contracts::CardRepository,
@@ -37,7 +39,11 @@ where
         }
     }
 
-    pub async fn generate(&self, card_ids: &[String]) -> Result<PathBuf, PdfError> {
+    pub async fn generate(
+        &self,
+        card_ids: &[String],
+        cancellation_token: CancellationToken,
+    ) -> Result<PathBuf, PdfError> {
         ensure_cards_were_requested(card_ids)?;
 
         let card_paths = self.find_card_paths(card_ids).await?;
@@ -48,27 +54,47 @@ where
 
         let output_dir = self.output_dir.clone();
         let output_path = make_output_path(&output_dir);
+        let temp_output_path = make_temporary_output_path(&output_path);
         let layout = self.layout;
 
         let handle = task::spawn_blocking(move || -> Result<PathBuf, PdfError> {
+            //Передаем owned для drop
             let _permit = permit;
 
-            std::fs::create_dir_all(&output_dir).map_err(|source| {
-                PdfInternalError::CreateOutputDir {
-                    path: output_dir.clone(),
-                    source,
-                }
-            })?;
+            let result = (|| -> Result<PathBuf, PdfError> {
+                fs::create_dir_all(&output_dir).map_err(|source| {
+                    PdfInternalError::CreateOutputDir {
+                        path: output_dir.clone(),
+                        source,
+                    }
+                })?;
 
-            let mut pdf = create_pdf();
-            render_cards(&mut pdf, &card_paths, layout);
+                let mut pdf = create_pdf();
+                render_cards(&mut pdf, &card_paths, layout, &cancellation_token)?;
+                ensure_generation_not_cancelled(&cancellation_token)?;
 
-            let output_path_str = output_path.to_string_lossy();
-            pdf.output_file_and_close(output_path_str.as_ref())
-                .map_err(PdfInternalError::Pdf)
-                .map_err(PdfError::from)?;
+                let temp_output_path_str = temp_output_path.to_string_lossy();
+                pdf.output_file_and_close(temp_output_path_str.as_ref())
+                    .map_err(PdfInternalError::Pdf)
+                    .map_err(PdfError::from)?;
 
-            Ok(output_path)
+                ensure_generation_not_cancelled(&cancellation_token)?;
+
+                fs::rename(&temp_output_path, &output_path)
+                    .map_err(|source| PdfInternalError::PersistGeneratedPdf {
+                        path: output_path.clone(),
+                        source,
+                    })
+                    .map_err(PdfError::from)?;
+
+                Ok(output_path.clone())
+            })();
+
+            if result.is_err() {
+                remove_file_if_exists(&temp_output_path);
+            }
+
+            result
         });
 
         handle
@@ -99,6 +125,7 @@ where
     }
 }
 
+#[inline]
 fn ensure_cards_were_requested(card_ids: &[String]) -> Result<(), PdfError> {
     if card_ids.is_empty() {
         return Err(PdfInputError::EmptyCardIds.into());
@@ -107,6 +134,7 @@ fn ensure_cards_were_requested(card_ids: &[String]) -> Result<(), PdfError> {
     Ok(())
 }
 
+#[inline]
 fn create_pdf() -> Fpdf<'static> {
     let mut pdf = Fpdf::new(Orientation::Portrait, PageSize::A4, "", UnitVec2::default());
     pdf.set_auto_page_break(false, Unit::zero());
@@ -114,16 +142,23 @@ fn create_pdf() -> Fpdf<'static> {
     pdf
 }
 
-fn render_cards(pdf: &mut Fpdf, card_paths: &[PathBuf], layout: Layout) {
+fn render_cards(
+    pdf: &mut Fpdf,
+    card_paths: &[PathBuf],
+    layout: Layout,
+    cancellation_token: &CancellationToken,
+) -> Result<(), PdfError> {
     let image_options = ImageOptions {
         read_dpi: false,
         ..ImageOptions::default()
     };
 
     for page in card_paths.chunks(layout.cards_per_page) {
+        ensure_generation_not_cancelled(cancellation_token)?;
         pdf.add_page();
 
         for (slot, card_path) in page.iter().enumerate() {
+            // ensure_generation_not_cancelled(cancellation_token)?;
             let (x_mm, y_mm) = layout.position_for_slot(slot);
             let card_path = card_path.to_string_lossy();
 
@@ -139,8 +174,34 @@ fn render_cards(pdf: &mut Fpdf, card_paths: &[PathBuf], layout: Layout) {
             );
         }
     }
+
+    Ok(())
 }
 
+#[inline]
+fn ensure_generation_not_cancelled(cancellation_token: &CancellationToken) -> Result<(), PdfError> {
+    if cancellation_token.is_cancelled() {
+        return Err(PdfInputError::PdfGenerationCancelled.into());
+    }
+
+    Ok(())
+}
+
+#[inline]
+fn make_temporary_output_path(output_path: &Path) -> PathBuf {
+    output_path.with_extension("pdf.part")
+}
+
+#[inline]
+fn remove_file_if_exists(path: &Path) {
+    match fs::remove_file(path) {
+        Ok(()) => {}
+        Err(error) if error.kind() == std::io::ErrorKind::NotFound => {}
+        Err(_) => {}
+    }
+}
+
+#[inline]
 fn make_output_path(output_dir: &Path) -> PathBuf {
     let timestamp_ms = SystemTime::now()
         .duration_since(UNIX_EPOCH)

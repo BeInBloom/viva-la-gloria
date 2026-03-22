@@ -1,21 +1,41 @@
+use std::time::Duration;
+
 use axum::{Json, extract::State};
+use tokio_util::sync::CancellationToken;
 
 use crate::{
     errors::{PdfError, PdfInternalError},
     models::{AppState, GeneratePdfRequest, GeneratePdfResponse},
 };
 
+const PDF_GENERATION_TIMEOUT: Duration = Duration::from_secs(2);
+
 pub async fn generate_pdf(
     State(state): State<AppState>,
     Json(payload): Json<GeneratePdfRequest>,
 ) -> Result<Json<GeneratePdfResponse>, PdfError> {
+    let pdf_service = state.pdf_service;
     let card_ids = payload
         .card_ids
         .into_iter()
         .map(normalize_card_id)
         .collect::<Vec<_>>();
 
-    let path = state.pdf_service.generate(&card_ids).await?;
+    let cancellation_token = CancellationToken::new();
+    let _cancel_generation_on_drop = cancellation_token.clone().drop_guard();
+
+    let handle = tokio::time::timeout(
+        PDF_GENERATION_TIMEOUT,
+        pdf_service.generate(&card_ids, cancellation_token.clone()),
+    );
+
+    let path = match handle.await {
+        Ok(result) => result?,
+        Err(_) => {
+            cancellation_token.cancel();
+            return Err(PdfInternalError::PdfGenerationTimedOut.into());
+        }
+    };
 
     let file_name = path
         .file_name()

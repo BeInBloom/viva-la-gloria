@@ -38,7 +38,11 @@ impl PdfError {
     fn status_code(&self) -> StatusCode {
         match self {
             Self::BadRequest(PdfInputError::PdfGenerationBusy) => StatusCode::TOO_MANY_REQUESTS,
+            Self::BadRequest(PdfInputError::PdfGenerationCancelled) => {
+                StatusCode::REQUEST_TIMEOUT
+            }
             Self::BadRequest(_) => StatusCode::BAD_REQUEST,
+            Self::Internal(PdfInternalError::PdfGenerationTimedOut) => StatusCode::REQUEST_TIMEOUT,
             Self::Internal(_) => StatusCode::INTERNAL_SERVER_ERROR,
         }
     }
@@ -51,6 +55,9 @@ pub(crate) enum PdfInputError {
 
     #[error("pdf generation is busy, try again later")]
     PdfGenerationBusy,
+
+    #[error("pdf generation was cancelled")]
+    PdfGenerationCancelled,
 
     #[error("cards not found: {card_ids:?}")]
     CardsNotFound { card_ids: Vec<String> },
@@ -79,6 +86,13 @@ pub(crate) enum PdfInternalError {
 
     #[error("failed to create output dir '{path}'")]
     CreateOutputDir {
+        path: PathBuf,
+        #[source]
+        source: std::io::Error,
+    },
+
+    #[error("failed to move generated pdf into '{path}'")]
+    PersistGeneratedPdf {
         path: PathBuf,
         #[source]
         source: std::io::Error,
