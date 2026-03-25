@@ -44,16 +44,42 @@ impl PreviewUrlBuilder {
     }
 }
 
+#[derive(Debug, Clone)]
+struct AssetPathBuilder {
+    root: PathBuf,
+}
+
+impl AssetPathBuilder {
+    fn new(asset_root: &str) -> Self {
+        Self {
+            root: PathBuf::from(asset_root),
+        }
+    }
+
+    fn build(&self, asset: &AssetEntry) -> PathBuf {
+        let relative_path = Path::new(&asset.relative_path);
+        let path = self.root.join(relative_path);
+
+        match relative_path.file_name() {
+            Some(file_name) if file_name == Path::new(&asset.filename).as_os_str() => path,
+            _ => path.join(&asset.filename),
+        }
+    }
+}
+
 pub(crate) struct ManifestRepo {
     manifest: Manifest,
+    asset_path_builder: AssetPathBuilder,
     preview_url_builder: PreviewUrlBuilder,
 }
 
 impl ManifestRepo {
     pub fn new(manifest: Manifest) -> Self {
+        let asset_path_builder = AssetPathBuilder::new(&manifest.asset_root);
         let preview_url_builder = PreviewUrlBuilder::new(&manifest.preview_root);
         Self {
             manifest,
+            asset_path_builder,
             preview_url_builder,
         }
     }
@@ -61,7 +87,7 @@ impl ManifestRepo {
     fn find_card_path_by_id(&self, card_id: &str) -> Option<PathBuf> {
         let card = self.manifest.cards_by_id.get(card_id)?;
         let asset = select_asset(&card.assets)?;
-        Some(build_asset_path(&self.manifest.asset_root, asset))
+        Some(self.asset_path_builder.build(asset))
     }
 
     fn list_cards_by_query(&self, query: ListCardsQuery) -> ListCardsRes {
@@ -129,20 +155,9 @@ fn select_asset(assets: &[AssetEntry]) -> Option<&AssetEntry> {
         .or_else(|| assets.first())
 }
 
-#[inline]
-fn build_asset_path(asset_root: &str, asset: &AssetEntry) -> PathBuf {
-    let relative_path = Path::new(&asset.relative_path);
-    let path = Path::new(asset_root).join(relative_path);
-
-    match relative_path.file_name() {
-        Some(file_name) if file_name == Path::new(&asset.filename).as_os_str() => path,
-        _ => path.join(&asset.filename),
-    }
-}
-
 #[cfg(test)]
 mod tests {
-    use super::{ManifestRepo, PreviewUrlBuilder};
+    use super::{AssetPathBuilder, ManifestRepo, PreviewUrlBuilder};
     use crate::models::{AssetEntry, AssetVariant, CardManifestEntry, ListCardsQuery, Manifest};
     use std::{collections::BTreeMap, path::Path};
 
@@ -296,6 +311,38 @@ mod tests {
         let url = builder.build("set_1/001.jpeg");
 
         assert_eq!(url, "/previews/set_1/001.jpeg");
+    }
+
+    #[test]
+    fn asset_path_builder_builds_path_when_relative_path_already_contains_filename() {
+        let builder = AssetPathBuilder::new("assets/images/eoj/main_sets");
+        let asset = test_asset(AssetVariant::Base, "001__base.jpeg", "set_1/001__base.jpeg");
+
+        let path = builder.build(&asset);
+
+        assert_eq!(
+            path,
+            Path::new("assets/images/eoj/main_sets").join("set_1/001__base.jpeg")
+        );
+    }
+
+    #[test]
+    fn asset_path_builder_appends_filename_when_relative_path_is_directory() {
+        let builder = AssetPathBuilder::new("assets/images/eoj/main_sets");
+        let asset = test_asset(
+            AssetVariant::Blank,
+            "015__warden-hilda__variant-blank__rev-01.jpeg",
+            "set_1/015",
+        );
+
+        let path = builder.build(&asset);
+
+        assert_eq!(
+            path,
+            Path::new("assets/images/eoj/main_sets")
+                .join("set_1/015")
+                .join("015__warden-hilda__variant-blank__rev-01.jpeg")
+        );
     }
 
     #[test]
