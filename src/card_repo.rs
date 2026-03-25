@@ -12,15 +12,50 @@ use crate::{
     },
 };
 
-const DEFAULT_STATR: &str = "000";
+const DEFAULT_START: &str = "000";
+const PUBLIC_PREVIEWS_ROOT: &str = "assets/previews";
+const PUBLIC_PREVIEWS_URL_PREFIX: &str = "/previews";
+
+#[derive(Debug, Clone)]
+struct PreviewUrlBuilder {
+    public_root: PathBuf,
+}
+
+impl PreviewUrlBuilder {
+    fn new(preview_root: &str) -> Self {
+        let public_root = Path::new(preview_root)
+            .strip_prefix(PUBLIC_PREVIEWS_ROOT)
+            .map(Path::to_path_buf)
+            .unwrap_or_else(|_| {
+                panic!(
+                    "invalid manifest.preview_root '{preview_root}': expected path under '{PUBLIC_PREVIEWS_ROOT}'"
+                )
+            });
+
+        Self { public_root }
+    }
+
+    fn build(&self, preview_relative_path: Option<&str>) -> Option<String> {
+        let public_path = self.public_root.join(preview_relative_path?);
+        Some(format!(
+            "{PUBLIC_PREVIEWS_URL_PREFIX}/{}",
+            public_path.to_string_lossy().replace('\\', "/")
+        ))
+    }
+}
 
 pub(crate) struct ManifestRepo {
     manifest: Manifest,
+    preview_url_builder: PreviewUrlBuilder,
 }
 
 impl ManifestRepo {
     pub fn new(manifest: Manifest) -> Self {
-        Self { manifest }
+        let preview_url_builder = PreviewUrlBuilder::new(&manifest.preview_root);
+        Self {
+            manifest,
+            preview_url_builder,
+        }
     }
 
     fn find_card_path_by_id(&self, card_id: &str) -> Option<PathBuf> {
@@ -47,7 +82,7 @@ impl ManifestRepo {
     fn collect_card_previews(&self, query: &ListCardsQuery) -> Vec<CardPreview> {
         match query.after.as_deref() {
             Some(after) => self.collect_card(after, query.limit),
-            None => self.collect_card(DEFAULT_STATR, query.limit),
+            None => self.collect_card(DEFAULT_START, query.limit),
         }
     }
 
@@ -56,8 +91,20 @@ impl ManifestRepo {
             .cards_by_id
             .range::<str, _>((Bound::Excluded(after), Bound::Unbounded))
             .take(limit + 1)
-            .map(|(_id, entry)| card_preview_from_card_entry(&self.manifest.preview_root, entry))
+            .map(|(_id, entry)| self.card_preview_from_card_entry(entry))
             .collect()
+    }
+
+    fn card_preview_from_card_entry(&self, entry: &CardManifestEntry) -> CardPreview {
+        let preview_url = self
+            .preview_url_builder
+            .build(entry.preview_relative_path.as_deref());
+
+        CardPreview {
+            card_id: entry.card_id.clone(),
+            title: entry.title_slug.clone(),
+            preview_url,
+        }
     }
 }
 
@@ -93,34 +140,9 @@ fn build_asset_path(asset_root: &str, asset: &AssetEntry) -> PathBuf {
     }
 }
 
-fn card_preview_from_card_entry(preview_root: &str, entry: &CardManifestEntry) -> CardPreview {
-    CardPreview {
-        card_id: entry.card_id.clone(),
-        title: entry.title_slug.clone(),
-        preview_url: build_preview_url(preview_root, entry.preview_relative_path.as_deref()),
-    }
-}
-
-fn build_preview_url(preview_root: &str, preview_relative_path: Option<&str>) -> Option<String> {
-    let preview_relative_path = preview_relative_path?;
-    let preview_root_suffix = Path::new(preview_root)
-        .strip_prefix("assets/previews")
-        .ok()?;
-    let preview_public_path = if preview_root_suffix.as_os_str().is_empty() {
-        PathBuf::from(preview_relative_path)
-    } else {
-        preview_root_suffix.join(preview_relative_path)
-    };
-
-    Some(format!(
-        "/previews/{}",
-        preview_public_path.to_string_lossy().replace('\\', "/")
-    ))
-}
-
 #[cfg(test)]
 mod tests {
-    use super::{ManifestRepo, build_preview_url};
+    use super::{ManifestRepo, PreviewUrlBuilder};
     use crate::models::{AssetEntry, AssetVariant, CardManifestEntry, ListCardsQuery, Manifest};
     use std::{collections::BTreeMap, path::Path};
 
@@ -256,11 +278,10 @@ mod tests {
     }
 
     #[test]
-    fn build_preview_url_uses_public_previews_prefix() {
-        let url = build_preview_url(
-            "assets/previews/eoj/main_sets",
-            Some("set_1/001__flame-magus__variant-base__rev-02.jpeg"),
-        );
+    fn preview_url_builder_builds_public_url_with_manifest_suffix() {
+        let builder = PreviewUrlBuilder::new("assets/previews/eoj/main_sets");
+
+        let url = builder.build(Some("set_1/001__flame-magus__variant-base__rev-02.jpeg"));
 
         assert_eq!(
             url.as_deref(),
@@ -269,20 +290,41 @@ mod tests {
     }
 
     #[test]
-    fn build_preview_url_returns_none_when_preview_is_missing() {
-        let url = build_preview_url("assets/previews/eoj/main_sets", None);
+    fn preview_url_builder_builds_public_url_for_root_without_suffix() {
+        let builder = PreviewUrlBuilder::new("assets/previews");
+
+        let url = builder.build(Some("set_1/001.jpeg"));
+
+        assert_eq!(url.as_deref(), Some("/previews/set_1/001.jpeg"));
+    }
+
+    #[test]
+    fn preview_url_builder_normalizes_backslashes_in_generated_url() {
+        let builder = PreviewUrlBuilder::new("assets/previews/eoj/main_sets");
+
+        let url = builder.build(Some(r"set_1\001.jpeg"));
+
+        assert_eq!(
+            url.as_deref(),
+            Some("/previews/eoj/main_sets/set_1/001.jpeg")
+        );
+    }
+
+    #[test]
+    fn preview_url_builder_returns_none_when_preview_is_missing() {
+        let builder = PreviewUrlBuilder::new("assets/previews/eoj/main_sets");
+
+        let url = builder.build(None);
 
         assert!(url.is_none());
     }
 
     #[test]
-    fn build_preview_url_returns_none_for_non_public_preview_root() {
-        let url = build_preview_url(
-            "assets/private-previews/eoj/main_sets",
-            Some("set_1/001__flame-magus__variant-base__rev-02.jpeg"),
-        );
-
-        assert!(url.is_none());
+    #[should_panic(
+        expected = "invalid manifest.preview_root 'assets/private-previews/eoj/main_sets': expected path under 'assets/previews'"
+    )]
+    fn preview_url_builder_panics_for_non_public_root() {
+        let _builder = PreviewUrlBuilder::new("assets/private-previews/eoj/main_sets");
     }
 
     fn test_repo() -> ManifestRepo {

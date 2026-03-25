@@ -24,12 +24,12 @@ use crate::{
 async fn main() -> anyhow::Result<()> {
     let manifest: Manifest =
         serde_json::from_str(&tokio::fs::read_to_string("./manifest.json").await?)?;
-    let mainfest_repo = Arc::new(ManifestRepo::new(manifest));
-    let pdf_service = PdfGenerator::new(mainfest_repo.clone());
+    let manifest_repo = Arc::new(ManifestRepo::new(manifest));
+    let pdf_service = PdfGenerator::new(manifest_repo.clone());
 
     let state = AppState {
         pdf_service: Arc::new(pdf_service),
-        card_repo: mainfest_repo,
+        card_repo: manifest_repo,
     };
 
     let app = Router::new()
