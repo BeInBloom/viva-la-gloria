@@ -20,7 +20,7 @@ const CARD_SIZE_MM: SizeMm = SizeMm::new(63.0, 88.0);
 const MAX_PARALLEL_JOBS: usize = 4;
 
 pub struct PdfGenerator<R> {
-    card_repository: R,
+    card_repository: Arc<R>,
     output_dir: PathBuf,
     layout: Layout,
     blocking_slots: Arc<Semaphore>,
@@ -30,7 +30,7 @@ impl<R> PdfGenerator<R>
 where
     R: CardRepository,
 {
-    pub fn new(card_repository: R) -> Self {
+    pub fn new(card_repository: Arc<R>) -> Self {
         Self {
             card_repository,
             output_dir: PathBuf::from(DEFAULT_OUTPUT_DIR),

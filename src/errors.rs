@@ -38,9 +38,7 @@ impl PdfError {
     fn status_code(&self) -> StatusCode {
         match self {
             Self::BadRequest(PdfInputError::PdfGenerationBusy) => StatusCode::TOO_MANY_REQUESTS,
-            Self::BadRequest(PdfInputError::PdfGenerationCancelled) => {
-                StatusCode::REQUEST_TIMEOUT
-            }
+            Self::BadRequest(PdfInputError::PdfGenerationCancelled) => StatusCode::REQUEST_TIMEOUT,
             Self::BadRequest(_) => StatusCode::BAD_REQUEST,
             Self::Internal(PdfInternalError::PdfGenerationTimedOut) => StatusCode::REQUEST_TIMEOUT,
             Self::Internal(_) => StatusCode::INTERNAL_SERVER_ERROR,
@@ -109,4 +107,13 @@ pub(crate) enum PdfInternalError {
 
     #[error("pdf generation failed")]
     Pdf(#[source] FpdfError),
+}
+
+#[derive(Debug, Error)]
+pub enum ListCardsError {}
+
+impl IntoResponse for ListCardsError {
+    fn into_response(self) -> Response {
+        (StatusCode::NO_CONTENT, "no content").into_response()
+    }
 }

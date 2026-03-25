@@ -1,16 +1,20 @@
 use std::time::Duration;
 
-use axum::{Json, extract::State};
+use axum::{
+    Json,
+    extract::{Query, State},
+};
 use tokio_util::sync::CancellationToken;
 
 use crate::{
-    errors::{PdfError, PdfInternalError},
-    models::{AppState, GeneratePdfRequest, GeneratePdfResponse},
+    contracts::CardRepository,
+    errors::{ListCardsError, PdfError, PdfInternalError},
+    models::{AppState, GeneratePdfRequest, GeneratePdfResponse, ListCardsReq, ListCardsRes},
 };
 
 const PDF_GENERATION_TIMEOUT: Duration = Duration::from_secs(2);
 
-pub async fn generate_pdf(
+pub(crate) async fn generate_pdf(
     State(state): State<AppState>,
     Json(payload): Json<GeneratePdfRequest>,
 ) -> Result<Json<GeneratePdfResponse>, PdfError> {
@@ -51,6 +55,15 @@ pub async fn generate_pdf(
 fn normalize_card_id(card_id: String) -> String {
     let card_id = card_id.trim();
     format!("{card_id:0>3}")
+}
+
+pub async fn list_cards(
+    State(state): State<AppState>,
+    Query(params): Query<ListCardsReq>,
+) -> Result<Json<ListCardsRes>, ListCardsError> {
+    let card_repo = state.card_repo;
+    let cards = card_repo.list_card(params.into()).await?;
+    Ok(Json(ListCardsRes { cards }))
 }
 
 #[cfg(test)]
