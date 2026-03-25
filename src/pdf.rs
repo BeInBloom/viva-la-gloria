@@ -256,3 +256,172 @@ impl Layout {
         )
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::{CARD_SIZE_MM, Layout, PAGE_SIZE_MM, PdfGenerator, ensure_cards_were_requested};
+    use crate::{
+        contracts::CardRepository,
+        errors::{CardRepositoryError, ListCardsError, PdfError, PdfInputError},
+        models::{ListCardsQuery, ListCardsRes},
+    };
+    use std::{
+        collections::BTreeMap,
+        path::PathBuf,
+        sync::Arc,
+        time::{SystemTime, UNIX_EPOCH},
+    };
+    use tokio::sync::Semaphore;
+    use tokio_util::sync::CancellationToken;
+
+    #[test]
+    fn ensure_cards_were_requested_rejects_empty_input() {
+        let error = ensure_cards_were_requested(&[]).unwrap_err();
+
+        assert!(matches!(
+            error,
+            PdfError::BadRequest(PdfInputError::EmptyCardIds)
+        ));
+    }
+
+    #[test]
+    fn layout_for_a4_cards_uses_expected_grid_and_margins() {
+        let layout = Layout::new(PAGE_SIZE_MM, CARD_SIZE_MM);
+
+        assert_eq!(layout.cards_per_row, 3);
+        assert_eq!(layout.cards_per_page, 9);
+        assert_eq!(layout.margin_left_mm, 10.5);
+        assert_eq!(layout.margin_top_mm, 16.5);
+    }
+
+    #[test]
+    fn layout_positions_center_card_grid_slots() {
+        let layout = Layout::new(PAGE_SIZE_MM, CARD_SIZE_MM);
+
+        assert_eq!(layout.position_for_slot(0), (10.5, 16.5));
+        assert_eq!(layout.position_for_slot(4), (73.5, 104.5));
+        assert_eq!(layout.position_for_slot(8), (136.5, 192.5));
+    }
+
+    #[tokio::test]
+    async fn find_card_paths_returns_missing_ids_in_request_order() {
+        let generator = test_generator(
+            StubRepo::new([
+                ("001", Some("tests/001.jpeg")),
+                ("002", None),
+                ("003", Some("tests/003.jpeg")),
+                ("004", None),
+            ]),
+            1,
+            unique_test_path("missing-paths"),
+        );
+
+        let error = generator
+            .find_card_paths(&["002".to_owned(), "001".to_owned(), "004".to_owned()])
+            .await
+            .unwrap_err();
+
+        match error {
+            PdfError::BadRequest(PdfInputError::CardsNotFound { card_ids }) => {
+                assert_eq!(card_ids, vec!["002".to_owned(), "004".to_owned()]);
+            }
+            other => panic!("unexpected error: {other:?}"),
+        }
+    }
+
+    #[tokio::test]
+    async fn generate_returns_busy_when_no_blocking_slots_are_available() {
+        let generator = test_generator(
+            StubRepo::new([("001", Some("tests/001.jpeg"))]),
+            0,
+            unique_test_path("busy"),
+        );
+
+        let error = generator
+            .generate(&["001".to_owned()], CancellationToken::new())
+            .await
+            .unwrap_err();
+
+        assert!(matches!(
+            error,
+            PdfError::BadRequest(PdfInputError::PdfGenerationBusy)
+        ));
+    }
+
+    #[tokio::test]
+    async fn generate_returns_cancelled_when_token_is_already_cancelled() {
+        let output_dir = unique_test_path("cancelled");
+        let generator = test_generator(
+            StubRepo::new([("001", Some("tests/001.jpeg"))]),
+            1,
+            output_dir.clone(),
+        );
+        let cancellation_token = CancellationToken::new();
+        cancellation_token.cancel();
+
+        let error = generator
+            .generate(&["001".to_owned()], cancellation_token)
+            .await
+            .unwrap_err();
+
+        assert!(matches!(
+            error,
+            PdfError::BadRequest(PdfInputError::PdfGenerationCancelled)
+        ));
+
+        let _ = std::fs::remove_dir_all(output_dir);
+    }
+
+    fn test_generator(
+        repo: StubRepo,
+        permits: usize,
+        output_dir: PathBuf,
+    ) -> PdfGenerator<StubRepo> {
+        PdfGenerator {
+            card_repository: Arc::new(repo),
+            output_dir,
+            layout: Layout::new(PAGE_SIZE_MM, CARD_SIZE_MM),
+            blocking_slots: Arc::new(Semaphore::new(permits)),
+        }
+    }
+
+    fn unique_test_path(name: &str) -> PathBuf {
+        let timestamp = SystemTime::now()
+            .duration_since(UNIX_EPOCH)
+            .expect("system time before unix epoch")
+            .as_nanos();
+
+        std::env::temp_dir().join(format!("eoj-card-generator-{name}-{timestamp}"))
+    }
+
+    struct StubRepo {
+        card_paths: BTreeMap<String, Option<PathBuf>>,
+    }
+
+    impl StubRepo {
+        fn new<const N: usize>(card_paths: [(&str, Option<&str>); N]) -> Self {
+            Self {
+                card_paths: card_paths
+                    .into_iter()
+                    .map(|(card_id, path)| (card_id.to_owned(), path.map(PathBuf::from)))
+                    .collect(),
+            }
+        }
+    }
+
+    impl CardRepository for StubRepo {
+        async fn find_card_path_by_id(
+            &self,
+            card_id: &str,
+        ) -> Result<Option<PathBuf>, CardRepositoryError> {
+            Ok(self.card_paths.get(card_id).cloned().flatten())
+        }
+
+        async fn list_cards(&self, _query: ListCardsQuery) -> Result<ListCardsRes, ListCardsError> {
+            Ok(ListCardsRes {
+                items: Vec::new(),
+                next_cursor: None,
+            })
+        }
+    }
+}

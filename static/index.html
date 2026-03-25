@@ -12,47 +12,174 @@
         <header class="app-header">
           <h1>Сборка PDF из карточек</h1>
           <p class="subtitle">
-            Вставьте ID карт и получите готовый файл для печати.
+            Соберите набор из каталога, настройте количество копий и сформируйте
+            PDF для печати.
           </p>
         </header>
 
-        <form id="pdf-form" class="panel">
-          <div class="field-head">
-            <label class="field-label" for="card-ids-input">ID карт</label>
-            <span id="card-count" class="field-meta">0 ID</span>
-          </div>
+        <div class="app-layout">
+          <aside class="sidebar">
+            <section
+              id="selection-panel"
+              class="panel selection-panel"
+              aria-labelledby="selection-title"
+            >
+              <div class="panel-head">
+                <div>
+                  <h2 id="selection-title">Выбранные карты</h2>
+                  <p class="panel-copy">
+                    Количество рядом с картой определяет, сколько раз она попадет
+                    в PDF.
+                  </p>
+                </div>
 
-          <p class="field-hint">
-            По одному ID на строку. Также поддерживаются пробелы, запятые и
-            точка с запятой.
-          </p>
+                <div class="panel-head-actions">
+                  <span id="selection-badge" class="selection-badge">0 копий</span>
+                  <button
+                    id="selection-toggle-button"
+                    type="button"
+                    class="button button-secondary panel-toggle"
+                    aria-controls="selection-panel-body"
+                    aria-expanded="true"
+                  >
+                    Свернуть
+                  </button>
+                </div>
+              </div>
 
-          <textarea
-            id="card-ids-input"
-            name="card_ids"
-            rows="11"
-            spellcheck="false"
-            aria-describedby="input-example"
-          ></textarea>
+              <div id="selection-panel-body" class="panel-body selection-panel-body">
+                <div class="selection-metrics">
+                  <div class="metric">
+                    <span class="metric-label">Уникальных карт</span>
+                    <strong id="selection-unique-count" class="metric-value">0</strong>
+                  </div>
+                  <div class="metric">
+                    <span class="metric-label">Всего копий</span>
+                    <strong id="selection-total-count" class="metric-value">0</strong>
+                  </div>
+                </div>
 
-          <p id="input-example" class="example">
-            Пример: <code>1</code> <code>12</code> <code>203</code> <code>311</code>
-          </p>
+                <div class="selection-scroll">
+                  <div id="selection-empty" class="empty-state">
+                    Пока ничего не выбрано. Добавьте карты из каталога или
+                    воспользуйтесь ручным вводом.
+                  </div>
+                  <div id="selection-list" class="selection-list" aria-live="polite"></div>
+                </div>
 
-          <div class="actions">
-            <button id="generate-button" type="submit" class="button button-primary">
-              Сформировать PDF
-            </button>
-            <button id="clear-button" type="button" class="button button-secondary">
-              Очистить
-            </button>
-          </div>
-        </form>
+                <div class="actions selection-actions">
+                  <button id="generate-button" type="button" class="button button-primary">
+                    Сформировать PDF
+                  </button>
+                  <button id="clear-button" type="button" class="button button-secondary">
+                    Очистить выбор
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            <section id="manual-panel" class="panel manual-panel" aria-labelledby="manual-title">
+              <div class="panel-head">
+                <div>
+                  <h2 id="manual-title">Ручной ввод ID</h2>
+                  <p class="panel-copy">
+                    Вставьте список ID, чтобы заменить текущий визуальный выбор.
+                  </p>
+                </div>
+
+                <div class="panel-head-actions">
+                  <span id="manual-count" class="field-meta">0 ID</span>
+                  <button
+                    id="manual-toggle-button"
+                    type="button"
+                    class="button button-secondary panel-toggle"
+                    aria-controls="manual-panel-body"
+                    aria-expanded="false"
+                  >
+                    Развернуть
+                  </button>
+                </div>
+              </div>
+
+              <div id="manual-panel-body" class="panel-body manual-panel-body">
+                <p class="field-hint">
+                  Поддерживаются переносы строк, пробелы, запятые и точка с
+                  запятой.
+                </p>
+
+                <textarea
+                  id="card-ids-input"
+                  name="card_ids"
+                  rows="8"
+                  aria-label="ID карт"
+                  spellcheck="false"
+                ></textarea>
+
+                <p class="example">
+                  Пример: <code>1</code> <code>12</code> <code>203</code>
+                  <code>311</code>
+                </p>
+
+                <div class="actions">
+                  <button
+                    id="manual-apply-button"
+                    type="button"
+                    class="button button-secondary"
+                  >
+                    Заменить выбор по ID
+                  </button>
+                </div>
+              </div>
+            </section>
+          </aside>
+
+          <section class="panel catalog-panel" aria-labelledby="catalog-title">
+            <div class="panel-head">
+              <div>
+                <h2 id="catalog-title">Каталог карт</h2>
+                <p class="panel-copy">
+                  Листайте каталог и добавляйте нужные карты кнопками «+» и
+                  «-».
+                </p>
+              </div>
+
+              <div class="catalog-head-actions">
+                <span id="catalog-count" class="field-meta">Страница 1 · 0 карт</span>
+              </div>
+            </div>
+
+            <div id="catalog-status" class="panel-note" role="status">
+              Загружаем каталог...
+            </div>
+            <div class="catalog-scroll">
+              <div id="catalog-grid" class="catalog-grid" aria-live="polite"></div>
+            </div>
+            <div class="catalog-footer">
+              <div class="pager-controls" aria-label="Пагинация каталога">
+                <button
+                  id="previous-page-button"
+                  type="button"
+                  class="button button-secondary"
+                >
+                  Назад
+                </button>
+                <span id="page-indicator" class="page-indicator">Страница 1</span>
+                <button
+                  id="next-page-button"
+                  type="button"
+                  class="button button-secondary"
+                >
+                  Вперед
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
 
         <section id="result-panel" class="panel result-panel result-idle">
           <h2>Результат</h2>
           <div id="result" class="result-text">
-            Введите ID карт и нажмите «Сформировать PDF».
+            Выберите карты и нажмите «Сформировать PDF».
           </div>
         </section>
       </section>

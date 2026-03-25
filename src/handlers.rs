@@ -62,8 +62,8 @@ pub async fn list_cards(
     Query(params): Query<ListCardsReq>,
 ) -> Result<Json<ListCardsRes>, ListCardsError> {
     let card_repo = state.card_repo;
-    let cards = card_repo.list_card(params.into()).await?;
-    Ok(Json(ListCardsRes { cards }))
+    let page = card_repo.list_cards(params.into()).await?;
+    Ok(Json(page))
 }
 
 #[cfg(test)]

@@ -117,3 +117,66 @@ impl IntoResponse for ListCardsError {
         (StatusCode::NO_CONTENT, "no content").into_response()
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::{PdfError, PdfInputError, PdfInternalError};
+    use axum::http::StatusCode;
+    use std::{io, path::PathBuf};
+
+    #[test]
+    fn pdf_error_maps_empty_input_to_bad_request() {
+        let error = PdfError::from(PdfInputError::EmptyCardIds);
+
+        assert_eq!(error.status_code(), StatusCode::BAD_REQUEST);
+        assert_eq!(error.to_string(), "card id list is empty");
+    }
+
+    #[test]
+    fn pdf_error_maps_busy_to_too_many_requests() {
+        let error = PdfError::from(PdfInputError::PdfGenerationBusy);
+
+        assert_eq!(error.status_code(), StatusCode::TOO_MANY_REQUESTS);
+        assert_eq!(error.to_string(), "pdf generation is busy, try again later");
+    }
+
+    #[test]
+    fn pdf_error_maps_cancelled_to_request_timeout() {
+        let error = PdfError::from(PdfInputError::PdfGenerationCancelled);
+
+        assert_eq!(error.status_code(), StatusCode::REQUEST_TIMEOUT);
+        assert_eq!(error.to_string(), "pdf generation was cancelled");
+    }
+
+    #[test]
+    fn pdf_error_preserves_missing_card_ids_in_message() {
+        let error = PdfError::from(PdfInputError::CardsNotFound {
+            card_ids: vec!["003".to_owned(), "005".to_owned()],
+        });
+
+        assert_eq!(error.status_code(), StatusCode::BAD_REQUEST);
+        assert_eq!(error.to_string(), "cards not found: [\"003\", \"005\"]");
+    }
+
+    #[test]
+    fn pdf_error_maps_internal_timeout_to_request_timeout() {
+        let error = PdfError::from(PdfInternalError::PdfGenerationTimedOut);
+
+        assert_eq!(error.status_code(), StatusCode::REQUEST_TIMEOUT);
+        assert_eq!(error.to_string(), "pdf generation timed out");
+    }
+
+    #[test]
+    fn pdf_error_maps_other_internal_errors_to_internal_server_error() {
+        let error = PdfError::from(PdfInternalError::CreateOutputDir {
+            path: PathBuf::from("/tmp/generated-pdf"),
+            source: io::Error::other("permission denied"),
+        });
+
+        assert_eq!(error.status_code(), StatusCode::INTERNAL_SERVER_ERROR);
+        assert_eq!(
+            error.to_string(),
+            "failed to create output dir '/tmp/generated-pdf'"
+        );
+    }
+}
