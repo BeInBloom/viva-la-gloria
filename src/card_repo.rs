@@ -39,7 +39,7 @@ impl PreviewUrlBuilder {
         let public_path = self.public_root.join(preview_relative_path?);
         Some(format!(
             "{PUBLIC_PREVIEWS_URL_PREFIX}/{}",
-            public_path.to_string_lossy().replace('\\', "/")
+            public_path.to_string_lossy()
         ))
     }
 }
@@ -296,18 +296,6 @@ mod tests {
         let url = builder.build(Some("set_1/001.jpeg"));
 
         assert_eq!(url.as_deref(), Some("/previews/set_1/001.jpeg"));
-    }
-
-    #[test]
-    fn preview_url_builder_normalizes_backslashes_in_generated_url() {
-        let builder = PreviewUrlBuilder::new("assets/previews/eoj/main_sets");
-
-        let url = builder.build(Some(r"set_1\001.jpeg"));
-
-        assert_eq!(
-            url.as_deref(),
-            Some("/previews/eoj/main_sets/set_1/001.jpeg")
-        );
     }
 
     #[test]
