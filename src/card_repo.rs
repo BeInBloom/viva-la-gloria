@@ -35,12 +35,12 @@ impl PreviewUrlBuilder {
         Self { public_root }
     }
 
-    fn build(&self, preview_relative_path: Option<&str>) -> Option<String> {
-        let public_path = self.public_root.join(preview_relative_path?);
-        Some(format!(
+    fn build(&self, preview_relative_path: &str) -> String {
+        let public_path = self.public_root.join(preview_relative_path);
+        format!(
             "{PUBLIC_PREVIEWS_URL_PREFIX}/{}",
             public_path.to_string_lossy()
-        ))
+        )
     }
 }
 
@@ -72,18 +72,17 @@ impl ManifestRepo {
             items.truncate(query.limit);
         }
 
-        let next_cursor = has_more
-            .then(|| items.last().map(|item| item.card_id.clone()))
-            .flatten();
+        let next_cursor = items
+            .last()
+            .filter(|_| has_more)
+            .map(|item| item.card_id.clone());
 
         ListCardsRes { items, next_cursor }
     }
 
     fn collect_card_previews(&self, query: &ListCardsQuery) -> Vec<CardPreview> {
-        match query.after.as_deref() {
-            Some(after) => self.collect_card(after, query.limit),
-            None => self.collect_card(DEFAULT_START, query.limit),
-        }
+        let after = query.after.as_deref().unwrap_or(DEFAULT_START);
+        self.collect_card(after, query.limit)
     }
 
     fn collect_card(&self, after: &str, limit: usize) -> Vec<CardPreview> {
@@ -96,9 +95,10 @@ impl ManifestRepo {
     }
 
     fn card_preview_from_card_entry(&self, entry: &CardManifestEntry) -> CardPreview {
-        let preview_url = self
-            .preview_url_builder
-            .build(entry.preview_relative_path.as_deref());
+        let preview_url = entry
+            .preview_relative_path
+            .as_deref()
+            .map(|path| self.preview_url_builder.build(path));
 
         CardPreview {
             card_id: entry.card_id.clone(),
@@ -281,11 +281,11 @@ mod tests {
     fn preview_url_builder_builds_public_url_with_manifest_suffix() {
         let builder = PreviewUrlBuilder::new("assets/previews/eoj/main_sets");
 
-        let url = builder.build(Some("set_1/001__flame-magus__variant-base__rev-02.jpeg"));
+        let url = builder.build("set_1/001__flame-magus__variant-base__rev-02.jpeg");
 
         assert_eq!(
-            url.as_deref(),
-            Some("/previews/eoj/main_sets/set_1/001__flame-magus__variant-base__rev-02.jpeg")
+            url,
+            "/previews/eoj/main_sets/set_1/001__flame-magus__variant-base__rev-02.jpeg"
         );
     }
 
@@ -293,18 +293,9 @@ mod tests {
     fn preview_url_builder_builds_public_url_for_root_without_suffix() {
         let builder = PreviewUrlBuilder::new("assets/previews");
 
-        let url = builder.build(Some("set_1/001.jpeg"));
+        let url = builder.build("set_1/001.jpeg");
 
-        assert_eq!(url.as_deref(), Some("/previews/set_1/001.jpeg"));
-    }
-
-    #[test]
-    fn preview_url_builder_returns_none_when_preview_is_missing() {
-        let builder = PreviewUrlBuilder::new("assets/previews/eoj/main_sets");
-
-        let url = builder.build(None);
-
-        assert!(url.is_none());
+        assert_eq!(url, "/previews/set_1/001.jpeg");
     }
 
     #[test]
