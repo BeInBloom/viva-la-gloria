@@ -89,13 +89,6 @@ pub(crate) enum PdfInternalError {
         source: std::io::Error,
     },
 
-    #[error("failed to move generated pdf into '{path}'")]
-    PersistGeneratedPdf {
-        path: PathBuf,
-        #[source]
-        source: std::io::Error,
-    },
-
     #[error("pdf generation timed out")]
     PdfGenerationTimedOut,
 

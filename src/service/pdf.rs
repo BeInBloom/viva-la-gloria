@@ -290,18 +290,13 @@ fn spawn_cleanup_task(
     })
 }
 
-pub struct PdfService<R> {
-    card_repository: Arc<R>,
-    pdf_storage: GeneratedPdfStorage<Running>,
-    layout: Layout,
+struct PdfGenerator {
     blocking_slots: Arc<Semaphore>,
+    pdf_storage: GeneratedPdfStorage<Running>,
 }
 
-impl<R> PdfService<R>
-where
-    R: CardRepository,
-{
-    pub fn new(card_repository: Arc<R>) -> Self {
+impl PdfGenerator {
+    fn new() -> Self {
         let pdf_storage = GeneratedPdfStorage::new(
             DEFAULT_OUTPUT_DIR,
             GeneratedPdfCleaner::new(FILE_TTL, MAX_DIR_SIZE),
@@ -310,74 +305,26 @@ where
         .start();
 
         Self {
-            card_repository,
             pdf_storage,
-            layout: Layout::new(PAGE_SIZE_MM, CARD_SIZE_MM),
             blocking_slots: Arc::new(Semaphore::new(MAX_PARALLEL_JOBS)),
         }
     }
 
-    pub async fn generate(&self, requested_card_ids: Vec<String>) -> Result<PathBuf, PdfError> {
-        let card_ids = requested_card_ids
-            .into_iter()
-            .map(normalize_card_id)
-            .collect::<Vec<_>>();
-
-        ensure_cards_were_requested(&card_ids)?;
-
-        let card_paths = self.find_card_paths(&card_ids).await?;
-        let cancellation_token = CancellationToken::new();
-        let _cancel_generation_on_drop = cancellation_token.clone().drop_guard();
-
-        let handle = tokio::time::timeout(
-            PDF_GENERATION_TIMEOUT,
-            self.render_pdf(&card_paths, cancellation_token.clone()),
-        );
-
-        match handle.await {
-            Ok(result) => result,
-            Err(_) => {
-                cancellation_token.cancel();
-                Err(PdfInternalError::PdfGenerationTimedOut.into())
-            }
-        }
-    }
-
-    async fn find_card_paths(&self, card_ids: &[String]) -> Result<Vec<PathBuf>, PdfError> {
-        let mut paths = Vec::with_capacity(card_ids.len());
-        let mut missing_card_ids = Vec::new();
-
-        for card_id in card_ids {
-            match self.card_repository.find_card_path_by_id(card_id).await? {
-                Some(path) => paths.push(path),
-                None => missing_card_ids.push(card_id.clone()),
-            }
-        }
-
-        if !missing_card_ids.is_empty() {
-            return Err(PdfInputError::CardsNotFound {
-                card_ids: missing_card_ids,
-            }
-            .into());
-        }
-
-        Ok(paths)
-    }
-
-    async fn render_pdf(
+    async fn generate_pdf(
         &self,
+        layout: Layout,
         card_paths: &[PathBuf],
-        cancellation_token: CancellationToken,
     ) -> Result<PathBuf, PdfError> {
+        let cancellation_token = CancellationToken::new();
+        let _drop_guard = cancellation_token.clone().drop_guard();
+
         let permit = Arc::clone(&self.blocking_slots)
             .try_acquire_owned()
             .map_err(|_| PdfInputError::PdfGenerationBusy)?;
 
         let output_dir = self.pdf_storage.output_dir();
-
         let output_path = self.pdf_storage.next_output_path();
 
-        let layout = self.layout;
         let card_paths = card_paths.to_vec();
 
         let handle = task::spawn_blocking(move || -> Result<PathBuf, PdfError> {
@@ -409,7 +356,68 @@ where
     }
 }
 
-#[inline]
+pub struct PdfService<R> {
+    card_repository: Arc<R>,
+    pdf_generator: PdfGenerator,
+}
+
+impl<R> PdfService<R>
+where
+    R: CardRepository,
+{
+    pub fn new(card_repository: Arc<R>) -> Self {
+        let pdf_generator = PdfGenerator::new();
+
+        Self {
+            card_repository,
+            pdf_generator,
+        }
+    }
+
+    pub async fn generate(&self, requested_card_ids: Vec<String>) -> Result<PathBuf, PdfError> {
+        let card_ids = requested_card_ids
+            .into_iter()
+            .map(normalize_card_id)
+            .collect::<Vec<_>>();
+
+        ensure_cards_were_requested(&card_ids)?;
+
+        let card_paths = self.find_card_paths(&card_ids).await?;
+        let layout = Layout::new(PAGE_SIZE_MM, CARD_SIZE_MM);
+
+        let handle = tokio::time::timeout(
+            PDF_GENERATION_TIMEOUT,
+            self.pdf_generator.generate_pdf(layout, &card_paths),
+        );
+
+        match handle.await {
+            Ok(result) => result,
+            Err(_) => Err(PdfInternalError::PdfGenerationTimedOut.into()),
+        }
+    }
+
+    async fn find_card_paths(&self, card_ids: &[String]) -> Result<Vec<PathBuf>, PdfError> {
+        let mut paths = Vec::with_capacity(card_ids.len());
+        let mut missing_card_ids = Vec::new();
+
+        for card_id in card_ids {
+            match self.card_repository.find_card_path_by_id(card_id).await? {
+                Some(path) => paths.push(path),
+                None => missing_card_ids.push(card_id.clone()),
+            }
+        }
+
+        if !missing_card_ids.is_empty() {
+            return Err(PdfInputError::CardsNotFound {
+                card_ids: missing_card_ids,
+            }
+            .into());
+        }
+
+        Ok(paths)
+    }
+}
+
 fn ensure_cards_were_requested(card_ids: &[String]) -> Result<(), PdfError> {
     if card_ids.is_empty() {
         return Err(PdfInputError::EmptyCardIds.into());
@@ -418,7 +426,6 @@ fn ensure_cards_were_requested(card_ids: &[String]) -> Result<(), PdfError> {
     Ok(())
 }
 
-#[inline]
 fn create_pdf() -> Fpdf<'static> {
     let mut pdf = Fpdf::new(Orientation::Portrait, PageSize::A4, "", UnitVec2::default());
     pdf.set_auto_page_break(false, Unit::zero());
@@ -461,7 +468,6 @@ fn render_cards(
     Ok(())
 }
 
-#[inline]
 fn ensure_generation_not_cancelled(cancellation_token: &CancellationToken) -> Result<(), PdfError> {
     if cancellation_token.is_cancelled() {
         return Err(PdfInputError::PdfGenerationCancelled.into());
@@ -520,7 +526,8 @@ impl Layout {
 mod tests {
     use super::{
         CARD_SIZE_MM, CLEANUP_PERIOD, FILE_TTL, GeneratedPdfCleaner, GeneratedPdfStorage, Layout,
-        MAX_DIR_SIZE, PAGE_SIZE_MM, PdfService, ensure_cards_were_requested,
+        MAX_DIR_SIZE, PAGE_SIZE_MM, PdfGenerator, PdfService, ensure_cards_were_requested,
+        ensure_generation_not_cancelled,
     };
     use crate::{
         contracts::CardRepository,
@@ -533,8 +540,6 @@ mod tests {
         sync::Arc,
         time::{SystemTime, UNIX_EPOCH},
     };
-    use tokio::sync::Semaphore;
-
     #[test]
     fn ensure_cards_were_requested_rejects_empty_input() {
         let error = ensure_cards_were_requested(&[]).unwrap_err();
@@ -609,43 +614,31 @@ mod tests {
         ));
     }
 
-    #[tokio::test]
-    async fn generate_returns_cancelled_when_token_is_already_cancelled() {
-        let output_dir = unique_test_path("cancelled");
-        let generator = test_service(
-            StubRepo::new([("001", Some("tests/001.jpeg"))]),
-            1,
-            output_dir.clone(),
-        );
+    #[test]
+    fn ensure_generation_not_cancelled_returns_cancelled_when_token_is_already_cancelled() {
+        let token = tokio_util::sync::CancellationToken::new();
+        token.cancel();
 
-        let error = generator
-            .render_pdf(&[PathBuf::from("tests/001.jpeg")], {
-                let token = tokio_util::sync::CancellationToken::new();
-                token.cancel();
-                token
-            })
-            .await
-            .unwrap_err();
+        let error = ensure_generation_not_cancelled(&token).unwrap_err();
 
         assert!(matches!(
             error,
             PdfError::BadRequest(PdfInputError::PdfGenerationCancelled)
         ));
-
-        let _ = std::fs::remove_dir_all(output_dir);
     }
 
     fn test_service(repo: StubRepo, permits: usize, output_dir: PathBuf) -> PdfService<StubRepo> {
         PdfService {
             card_repository: Arc::new(repo),
-            pdf_storage: GeneratedPdfStorage::new(
-                output_dir,
-                GeneratedPdfCleaner::new(FILE_TTL, MAX_DIR_SIZE),
-                CLEANUP_PERIOD,
-            )
-            .start(),
-            layout: Layout::new(PAGE_SIZE_MM, CARD_SIZE_MM),
-            blocking_slots: Arc::new(Semaphore::new(permits)),
+            pdf_generator: PdfGenerator {
+                pdf_storage: GeneratedPdfStorage::new(
+                    output_dir,
+                    GeneratedPdfCleaner::new(FILE_TTL, MAX_DIR_SIZE),
+                    CLEANUP_PERIOD,
+                )
+                .start(),
+                blocking_slots: Arc::new(tokio::sync::Semaphore::new(permits)),
+            },
         }
     }
 
