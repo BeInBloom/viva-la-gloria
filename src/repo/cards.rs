@@ -84,13 +84,13 @@ impl ManifestRepo {
         }
     }
 
-    fn find_card_path_by_id(&self, card_id: &str) -> Option<PathBuf> {
+    fn find_card_path(&self, card_id: &str) -> Option<PathBuf> {
         let card = self.manifest.cards_by_id.get(card_id)?;
         let asset = select_asset(&card.assets)?;
         Some(self.asset_path_builder.build(asset))
     }
 
-    fn list_cards_by_query(&self, query: ListCardsQuery) -> ListCardsRes {
+    fn list_cards_page(&self, query: ListCardsQuery) -> ListCardsRes {
         let mut items = self.collect_card_previews(&query);
         let has_more = items.len() > query.limit;
 
@@ -108,10 +108,10 @@ impl ManifestRepo {
 
     fn collect_card_previews(&self, query: &ListCardsQuery) -> Vec<CardPreview> {
         let after = query.after.as_deref().unwrap_or(DEFAULT_START);
-        self.collect_card(after, query.limit)
+        self.collect_cards(after, query.limit)
     }
 
-    fn collect_card(&self, after: &str, limit: usize) -> Vec<CardPreview> {
+    fn collect_cards(&self, after: &str, limit: usize) -> Vec<CardPreview> {
         self.manifest
             .cards_by_id
             .range::<str, _>((Bound::Excluded(after), Bound::Unbounded))
@@ -139,11 +139,11 @@ impl CardRepository for ManifestRepo {
         &self,
         card_id: &str,
     ) -> Result<Option<PathBuf>, CardRepositoryError> {
-        Ok(self.find_card_path_by_id(card_id))
+        Ok(self.find_card_path(card_id))
     }
 
     async fn list_cards(&self, query: ListCardsQuery) -> Result<ListCardsRes, ListCardsError> {
-        Ok(self.list_cards_by_query(query))
+        Ok(self.list_cards_page(query))
     }
 }
 
@@ -157,8 +157,9 @@ fn select_asset(assets: &[AssetEntry]) -> Option<&AssetEntry> {
 
 #[cfg(test)]
 mod tests {
-    use super::{AssetPathBuilder, ManifestRepo, PreviewUrlBuilder};
     use crate::models::{AssetEntry, AssetVariant, CardManifestEntry, ListCardsQuery, Manifest};
+
+    use super::{AssetPathBuilder, ManifestRepo, PreviewUrlBuilder};
     use std::{collections::BTreeMap, path::Path};
 
     #[test]
@@ -184,7 +185,7 @@ mod tests {
             limit: 2,
         };
 
-        let page = repo.list_cards_by_query(query);
+        let page = repo.list_cards_page(query);
 
         assert_eq!(page.items.len(), 2);
         assert_eq!(page.items[0].card_id, "001");
@@ -200,7 +201,7 @@ mod tests {
             limit: 2,
         };
 
-        let page = repo.list_cards_by_query(query);
+        let page = repo.list_cards_page(query);
 
         assert_eq!(page.items.len(), 1);
         assert_eq!(page.items[0].card_id, "003");
@@ -215,7 +216,7 @@ mod tests {
             cards_by_id: BTreeMap::from([("001".to_owned(), test_card_without_preview("001"))]),
         });
 
-        let page = repo.list_cards_by_query(ListCardsQuery {
+        let page = repo.list_cards_page(ListCardsQuery {
             after: None,
             limit: 1,
         });
@@ -250,7 +251,7 @@ mod tests {
             )]),
         });
 
-        let path = repo.find_card_path_by_id("001");
+        let path = repo.find_card_path("001");
 
         assert_eq!(
             path,
@@ -280,7 +281,7 @@ mod tests {
             )]),
         });
 
-        let path = repo.find_card_path_by_id("015");
+        let path = repo.find_card_path("015");
 
         assert_eq!(
             path,

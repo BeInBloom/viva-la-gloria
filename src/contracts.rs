@@ -2,7 +2,7 @@ use std::path::PathBuf;
 
 use crate::{
     errors::{CardRepositoryError, ListCardsError},
-    models::ListCardsQuery,
+    models::{ListCardsQuery, ListCardsRes},
 };
 
 pub trait CardRepository: Send + Sync + 'static {
@@ -11,8 +11,5 @@ pub trait CardRepository: Send + Sync + 'static {
         card_id: &str,
     ) -> Result<Option<PathBuf>, CardRepositoryError>;
 
-    async fn list_cards(
-        &self,
-        query: ListCardsQuery,
-    ) -> Result<crate::models::ListCardsRes, ListCardsError>;
+    async fn list_cards(&self, query: ListCardsQuery) -> Result<ListCardsRes, ListCardsError>;
 }
