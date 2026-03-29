@@ -142,8 +142,20 @@ fn ensure_generation_not_cancelled(cancellation_token: &CancellationToken) -> Re
 
 #[cfg(test)]
 mod tests {
-    use super::ensure_generation_not_cancelled;
+    use std::{
+        fs,
+        path::{Path, PathBuf},
+        time::{SystemTime, UNIX_EPOCH},
+    };
+
+    use tokio_util::sync::CancellationToken;
+
     use crate::errors::{PdfError, PdfInputError};
+
+    use super::{
+        PdfGenerator, ensure_generation_not_cancelled,
+        super::layout::{CARD_SIZE_MM, Layout, PAGE_SIZE_MM},
+    };
 
     #[test]
     fn ensure_generation_not_cancelled_returns_cancelled_when_token_is_already_cancelled() {
@@ -156,5 +168,112 @@ mod tests {
             error,
             PdfError::BadRequest(PdfInputError::PdfGenerationCancelled)
         ));
+    }
+
+    #[tokio::test]
+    async fn generate_pdf_writes_non_empty_pdf_to_requested_output_dir() {
+        let dir = TestDir::new("generator-success");
+        let generator = PdfGenerator::for_tests(dir.path().join("out"), 1);
+        let layout = Layout::new(PAGE_SIZE_MM, CARD_SIZE_MM);
+
+        let output_path = generator
+            .generate_pdf(
+                CancellationToken::new(),
+                layout,
+                &[fixture_card_path("001__flame-magus__variant-base__rev-02.jpeg")],
+            )
+            .await
+            .expect("pdf generation should succeed");
+
+        assert_eq!(output_path.parent(), Some(dir.path().join("out").as_path()));
+        assert!(output_path.exists(), "generated file should exist");
+        assert_eq!(output_path.extension().and_then(|ext| ext.to_str()), Some("pdf"));
+
+        let bytes = fs::read(&output_path).expect("read generated pdf");
+        assert!(bytes.starts_with(b"%PDF-"), "generated file should be a pdf");
+        assert!(bytes.len() > 100, "generated pdf should not be trivially empty");
+    }
+
+    #[tokio::test]
+    async fn generate_pdf_returns_cancelled_and_writes_no_file_when_token_is_pre_cancelled() {
+        let dir = TestDir::new("generator-cancelled");
+        let output_dir = dir.path().join("out");
+        let generator = PdfGenerator::for_tests(output_dir.clone(), 1);
+        let layout = Layout::new(PAGE_SIZE_MM, CARD_SIZE_MM);
+        let token = CancellationToken::new();
+        token.cancel();
+
+        let error = generator
+            .generate_pdf(
+                token,
+                layout,
+                &[fixture_card_path("001__flame-magus__variant-base__rev-02.jpeg")],
+            )
+            .await
+            .unwrap_err();
+
+        assert!(matches!(
+            error,
+            PdfError::BadRequest(PdfInputError::PdfGenerationCancelled)
+        ));
+        assert_dir_is_empty(&output_dir);
+    }
+
+    #[tokio::test]
+    async fn generate_pdf_returns_internal_error_for_missing_asset_files() {
+        let dir = TestDir::new("generator-missing-asset");
+        let output_dir = dir.path().join("out");
+        let generator = PdfGenerator::for_tests(output_dir.clone(), 1);
+        let layout = Layout::new(PAGE_SIZE_MM, CARD_SIZE_MM);
+
+        let error = generator
+            .generate_pdf(
+                CancellationToken::new(),
+                layout,
+                &[PathBuf::from("assets/images/eoj/main_sets/set_1/does-not-exist.jpeg")],
+            )
+            .await
+            .unwrap_err();
+
+        assert!(matches!(error, PdfError::Internal(_)));
+        assert_dir_is_empty(&output_dir);
+    }
+
+    fn fixture_card_path(file_name: &str) -> PathBuf {
+        Path::new("assets/images/eoj/main_sets/set_1").join(file_name)
+    }
+
+    fn assert_dir_is_empty(dir: &Path) {
+        let entries = fs::read_dir(dir)
+            .expect("read output dir")
+            .map(|entry| entry.expect("read dir entry"))
+            .collect::<Vec<_>>();
+        assert!(entries.is_empty(), "expected {} to be empty", dir.display());
+    }
+
+    struct TestDir {
+        path: PathBuf,
+    }
+
+    impl TestDir {
+        fn new(name: &str) -> Self {
+            let suffix = SystemTime::now()
+                .duration_since(UNIX_EPOCH)
+                .expect("system time before unix epoch")
+                .as_nanos();
+            let path = std::env::temp_dir().join(format!("eoj-card-generator-{name}-{suffix}"));
+            fs::create_dir_all(&path).expect("create temp dir");
+            Self { path }
+        }
+
+        fn path(&self) -> &Path {
+            &self.path
+        }
+    }
+
+    impl Drop for TestDir {
+        fn drop(&mut self) {
+            let _ = fs::remove_dir_all(&self.path);
+        }
     }
 }

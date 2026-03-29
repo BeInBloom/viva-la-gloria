@@ -270,3 +270,184 @@ fn spawn_cleanup_task(
         }
     })
 }
+
+#[cfg(test)]
+mod tests {
+    use super::{CleanupPlan, FileInfo, GeneratedPdfCleaner, GeneratedPdfStorage};
+    use std::{
+        fs,
+        path::{Path, PathBuf},
+        time::{Duration, SystemTime, UNIX_EPOCH},
+    };
+
+    #[test]
+    fn split_expired_files_expires_ttl_boundary_and_keeps_future_files() {
+        let cleaner = GeneratedPdfCleaner::new(Duration::from_secs(10), u64::MAX);
+        let now = UNIX_EPOCH + Duration::from_secs(20);
+        let boundary = PathBuf::from("boundary.pdf");
+        let recent = PathBuf::from("recent.pdf");
+        let future = PathBuf::from("future.pdf");
+
+        let (expired, survivors) = cleaner.split_expired_files(
+            vec![
+                file_info(boundary.clone(), now - Duration::from_secs(10), 10),
+                file_info(recent.clone(), now - Duration::from_secs(9), 10),
+                file_info(future.clone(), now + Duration::from_secs(1), 10),
+            ],
+            now,
+        );
+
+        assert_eq!(expired, vec![boundary]);
+        assert_eq!(file_paths(&survivors), vec![recent, future]);
+    }
+
+    #[test]
+    fn select_oversized_files_deletes_oldest_files_first() {
+        let cleaner = GeneratedPdfCleaner::new(Duration::from_secs(60), 50);
+        let base = UNIX_EPOCH + Duration::from_secs(100);
+        let oldest = PathBuf::from("oldest.pdf");
+        let middle = PathBuf::from("middle.pdf");
+        let newest = PathBuf::from("newest.pdf");
+
+        let to_delete = cleaner.select_oversized_files(vec![
+            file_info(newest.clone(), base + Duration::from_secs(3), 20),
+            file_info(oldest.clone(), base + Duration::from_secs(1), 40),
+            file_info(middle.clone(), base + Duration::from_secs(2), 10),
+        ]);
+
+        assert_eq!(to_delete, vec![oldest]);
+    }
+
+    #[test]
+    fn build_cleanup_plan_excludes_expired_files_from_oversize_calculation() {
+        let cleaner = GeneratedPdfCleaner::new(Duration::from_secs(10), 100);
+        let now = UNIX_EPOCH + Duration::from_secs(30);
+        let expired = PathBuf::from("expired.pdf");
+        let oversized = PathBuf::from("oversized.pdf");
+        let newest = PathBuf::from("newest.pdf");
+
+        let plan = cleaner.build_cleanup_plan(
+            vec![
+                file_info(expired.clone(), now - Duration::from_secs(11), 100),
+                file_info(oversized.clone(), now - Duration::from_secs(5), 60),
+                file_info(newest.clone(), now - Duration::from_secs(4), 60),
+            ],
+            now,
+        );
+
+        assert_eq!(
+            plan_paths(plan),
+            (
+                vec![expired],
+                vec![oversized],
+            )
+        );
+    }
+
+    #[tokio::test]
+    async fn cleanup_dir_removes_root_files_but_keeps_nested_directories() {
+        let dir = TestDir::new("cleanup-root-files");
+        let root_file = write_file(dir.path(), "root.pdf", 8);
+        let nested_dir = dir.path().join("nested");
+        fs::create_dir_all(&nested_dir).expect("create nested dir");
+        let nested_file = write_file(&nested_dir, "nested.pdf", 8);
+        let cleaner = GeneratedPdfCleaner::new(Duration::ZERO, u64::MAX);
+
+        cleaner.cleanup_dir(dir.path()).await.expect("cleanup succeeds");
+
+        assert!(!root_file.exists(), "expected root file to be deleted");
+        assert!(nested_dir.exists(), "expected nested directory to remain");
+        assert!(nested_file.exists(), "expected nested file to remain untouched");
+    }
+
+    #[tokio::test]
+    async fn next_output_path_notifies_cleanup_and_returns_pdf_path() {
+        let root = TestDir::new("storage");
+        let output_dir = root.path().join("generated");
+        let storage = GeneratedPdfStorage::new(
+            &output_dir,
+            GeneratedPdfCleaner::new(Duration::ZERO, u64::MAX),
+            Duration::from_secs(60),
+        )
+        .start();
+
+        assert!(output_dir.exists(), "storage should create the output directory");
+
+        tokio::time::sleep(Duration::from_millis(50)).await;
+
+        let stale_file = write_file(&output_dir, "stale.pdf", 8);
+        let output_path = storage.next_output_path();
+
+        assert_eq!(output_path.parent(), Some(output_dir.as_path()));
+
+        let file_name = output_path
+            .file_name()
+            .and_then(|name| name.to_str())
+            .expect("generated path has utf-8 file name");
+        assert!(file_name.starts_with("cards-"));
+        assert!(file_name.ends_with(".pdf"));
+
+        wait_until_missing(&stale_file).await;
+    }
+
+    fn file_info(path: PathBuf, modified: SystemTime, size: u64) -> FileInfo {
+        FileInfo {
+            path,
+            modified,
+            size,
+        }
+    }
+
+    fn file_paths(files: &[FileInfo]) -> Vec<PathBuf> {
+        files.iter().map(|file| file.path.clone()).collect()
+    }
+
+    fn plan_paths(plan: CleanupPlan) -> (Vec<PathBuf>, Vec<PathBuf>) {
+        (plan.expired, plan.oversized)
+    }
+
+    fn write_file(dir: &Path, file_name: &str, size: usize) -> PathBuf {
+        fs::create_dir_all(dir).expect("create test dir");
+        let path = dir.join(file_name);
+        fs::write(&path, vec![b'x'; size]).expect("write test file");
+        path
+    }
+
+    async fn wait_until_missing(path: &Path) {
+        for _ in 0..50 {
+            if !path.exists() {
+                return;
+            }
+
+            tokio::time::sleep(Duration::from_millis(10)).await;
+        }
+
+        panic!("expected {} to be deleted", path.to_string_lossy());
+    }
+
+    struct TestDir {
+        path: PathBuf,
+    }
+
+    impl TestDir {
+        fn new(name: &str) -> Self {
+            let suffix = SystemTime::now()
+                .duration_since(UNIX_EPOCH)
+                .expect("system time before unix epoch")
+                .as_nanos();
+            let path = std::env::temp_dir().join(format!("eoj-card-generator-{name}-{suffix}"));
+            fs::create_dir_all(&path).expect("create temp dir");
+            Self { path }
+        }
+
+        fn path(&self) -> &Path {
+            &self.path
+        }
+    }
+
+    impl Drop for TestDir {
+        fn drop(&mut self) {
+            let _ = fs::remove_dir_all(&self.path);
+        }
+    }
+}
