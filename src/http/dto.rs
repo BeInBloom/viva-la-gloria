@@ -30,13 +30,11 @@ impl From<ListCardsReq> for ListCardsQuery {
     }
 }
 
-#[inline]
 pub fn normalize_card_id(card_id: String) -> String {
     let card_id = card_id.trim();
     format!("{card_id:0>3}")
 }
 
-#[inline]
 fn normalize_optional_card_id(after: Option<String>) -> Option<String> {
     let after = after?;
     let after = after.trim();
@@ -48,7 +46,6 @@ fn normalize_optional_card_id(after: Option<String>) -> Option<String> {
     Some(format!("{after:0>3}"))
 }
 
-#[inline]
 fn clamp_card_page_size(limit: Option<usize>) -> usize {
     match limit {
         Some(value @ 1..=MAX_CARD_PAGE_SIZE) => value,

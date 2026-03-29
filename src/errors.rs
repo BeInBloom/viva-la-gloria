@@ -1,5 +1,3 @@
-use std::path::PathBuf;
-
 use axum::{
     http::StatusCode,
     response::{IntoResponse, Response},
@@ -82,13 +80,6 @@ pub(crate) enum PdfInternalError {
     #[error("card repository error")]
     CardRepository(#[from] CardRepositoryError),
 
-    #[error("failed to create output dir '{path}'")]
-    CreateOutputDir {
-        path: PathBuf,
-        #[source]
-        source: std::io::Error,
-    },
-
     #[error("pdf generation timed out")]
     PdfGenerationTimedOut,
 
@@ -115,7 +106,6 @@ impl IntoResponse for ListCardsError {
 mod tests {
     use super::{PdfError, PdfInputError, PdfInternalError};
     use axum::http::StatusCode;
-    use std::{io, path::PathBuf};
 
     #[test]
     fn pdf_error_maps_empty_input_to_bad_request() {
@@ -157,19 +147,5 @@ mod tests {
 
         assert_eq!(error.status_code(), StatusCode::REQUEST_TIMEOUT);
         assert_eq!(error.to_string(), "pdf generation timed out");
-    }
-
-    #[test]
-    fn pdf_error_maps_other_internal_errors_to_internal_server_error() {
-        let error = PdfError::from(PdfInternalError::CreateOutputDir {
-            path: PathBuf::from("/tmp/generated-pdf"),
-            source: io::Error::other("permission denied"),
-        });
-
-        assert_eq!(error.status_code(), StatusCode::INTERNAL_SERVER_ERROR);
-        assert_eq!(
-            error.to_string(),
-            "failed to create output dir '/tmp/generated-pdf'"
-        );
     }
 }
