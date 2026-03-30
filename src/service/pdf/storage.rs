@@ -9,6 +9,7 @@ use tokio::{
     sync::Notify,
     task::{self, JoinHandle},
 };
+use tracing::error;
 
 #[derive(Debug, Clone, Copy)]
 enum DeletionReason {
@@ -138,7 +139,7 @@ impl GeneratedPdfCleaner {
     async fn delete_files(&self, paths: Vec<PathBuf>, reason: DeletionReason) {
         for path in paths {
             if let Err(err) = tokio::fs::remove_file(&path).await {
-                eprintln!(
+                error!(
                     "failed to delete {} file {}: {err}",
                     reason.as_str(),
                     path.to_string_lossy(),
@@ -194,20 +195,18 @@ impl GeneratedPdfStorage<Stopped> {
         path: impl Into<PathBuf>,
         cleaner: GeneratedPdfCleaner,
         cleanup_period: Duration,
-    ) -> Self {
+    ) -> io::Result<Self> {
         let output_dir = path.into();
-        fs::create_dir_all(&output_dir).unwrap_or_else(|err| {
-            panic!("cant create dir {}: {}", output_dir.to_string_lossy(), err)
-        });
+        fs::create_dir_all(&output_dir)?;
 
-        Self {
+        Ok(Self {
             core: StorageCore {
                 output_dir,
                 cleaner,
                 cleanup_period,
             },
             state: Stopped,
-        }
+        })
     }
 
     pub(super) fn start(self) -> GeneratedPdfStorage<Running> {
@@ -265,7 +264,7 @@ fn spawn_cleanup_task(
             }
 
             if let Err(err) = cleaner.cleanup_dir(&output_dir).await {
-                eprintln!("cleanup failed for {}: {err}", output_dir.to_string_lossy());
+                error!("cleanup failed for {}: {err}", output_dir.to_string_lossy());
             }
         }
     })
@@ -335,13 +334,7 @@ mod tests {
             now,
         );
 
-        assert_eq!(
-            plan_paths(plan),
-            (
-                vec![expired],
-                vec![oversized],
-            )
-        );
+        assert_eq!(plan_paths(plan), (vec![expired], vec![oversized],));
     }
 
     #[tokio::test]
@@ -353,11 +346,17 @@ mod tests {
         let nested_file = write_file(&nested_dir, "nested.pdf", 8);
         let cleaner = GeneratedPdfCleaner::new(Duration::ZERO, u64::MAX);
 
-        cleaner.cleanup_dir(dir.path()).await.expect("cleanup succeeds");
+        cleaner
+            .cleanup_dir(dir.path())
+            .await
+            .expect("cleanup succeeds");
 
         assert!(!root_file.exists(), "expected root file to be deleted");
         assert!(nested_dir.exists(), "expected nested directory to remain");
-        assert!(nested_file.exists(), "expected nested file to remain untouched");
+        assert!(
+            nested_file.exists(),
+            "expected nested file to remain untouched"
+        );
     }
 
     #[tokio::test]
@@ -369,9 +368,13 @@ mod tests {
             GeneratedPdfCleaner::new(Duration::ZERO, u64::MAX),
             Duration::from_secs(60),
         )
+        .expect("storage should be created")
         .start();
 
-        assert!(output_dir.exists(), "storage should create the output directory");
+        assert!(
+            output_dir.exists(),
+            "storage should create the output directory"
+        );
 
         tokio::time::sleep(Duration::from_millis(50)).await;
 

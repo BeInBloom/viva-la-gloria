@@ -46,8 +46,11 @@ impl PdfError {
 
 #[derive(Debug, Error)]
 pub(crate) enum PdfInputError {
-    #[error("card id list is empty")]
+    #[error("card id list must not be empty")]
     EmptyCardIds,
+
+    #[error("card id list is too large: maximum is {limit}, got {actual}")]
+    TooManyCardIds { limit: usize, actual: usize },
 
     #[error("pdf generation is busy, try again later")]
     PdfGenerationBusy,
@@ -112,7 +115,21 @@ mod tests {
         let error = PdfError::from(PdfInputError::EmptyCardIds);
 
         assert_eq!(error.status_code(), StatusCode::BAD_REQUEST);
-        assert_eq!(error.to_string(), "card id list is empty");
+        assert_eq!(error.to_string(), "card id list must not be empty");
+    }
+
+    #[test]
+    fn pdf_error_maps_too_many_card_ids_to_bad_request() {
+        let error = PdfError::from(PdfInputError::TooManyCardIds {
+            limit: 100,
+            actual: 101,
+        });
+
+        assert_eq!(error.status_code(), StatusCode::BAD_REQUEST);
+        assert_eq!(
+            error.to_string(),
+            "card id list is too large: maximum is 100, got 101"
+        );
     }
 
     #[test]

@@ -3,6 +3,8 @@ use std::{
     path::{Path, PathBuf},
 };
 
+use anyhow::{Result, anyhow};
+
 use crate::{
     contracts::CardRepository,
     errors::{CardRepositoryError, ListCardsError},
@@ -22,17 +24,17 @@ struct PreviewUrlBuilder {
 }
 
 impl PreviewUrlBuilder {
-    fn new(preview_root: &str) -> Self {
+    fn new(preview_root: &str) -> Result<Self> {
         let public_root = Path::new(preview_root)
             .strip_prefix(PUBLIC_PREVIEWS_ROOT)
             .map(Path::to_path_buf)
-            .unwrap_or_else(|_| {
-                panic!(
+            .map_err(|_| {
+                anyhow!(
                     "invalid manifest.preview_root '{preview_root}': expected path under '{PUBLIC_PREVIEWS_ROOT}'"
                 )
-            });
+            })?;
 
-        Self { public_root }
+        Ok(Self { public_root })
     }
 
     fn build(&self, preview_relative_path: &str) -> String {
@@ -74,14 +76,14 @@ pub(crate) struct ManifestRepo {
 }
 
 impl ManifestRepo {
-    pub fn new(manifest: Manifest) -> Self {
+    pub fn new(manifest: Manifest) -> Result<Self> {
         let asset_path_builder = AssetPathBuilder::new(&manifest.asset_root);
-        let preview_url_builder = PreviewUrlBuilder::new(&manifest.preview_root);
-        Self {
+        let preview_url_builder = PreviewUrlBuilder::new(&manifest.preview_root)?;
+        Ok(Self {
             manifest,
             asset_path_builder,
             preview_url_builder,
-        }
+        })
     }
 
     fn find_card_path(&self, card_id: &str) -> Option<PathBuf> {
@@ -214,7 +216,8 @@ mod tests {
             asset_root: "assets/images/eoj/main_sets".to_owned(),
             preview_root: "assets/previews/eoj/main_sets".to_owned(),
             cards_by_id: BTreeMap::from([("001".to_owned(), test_card_without_preview("001"))]),
-        });
+        })
+        .expect("repo should be created");
 
         let page = repo.list_cards_page(ListCardsQuery {
             after: None,
@@ -249,7 +252,8 @@ mod tests {
                     ],
                 },
             )]),
-        });
+        })
+        .expect("repo should be created");
 
         let path = repo.find_card_path("001");
 
@@ -279,7 +283,8 @@ mod tests {
                     )],
                 },
             )]),
-        });
+        })
+        .expect("repo should be created");
 
         let path = repo.find_card_path("015");
 
@@ -295,7 +300,8 @@ mod tests {
 
     #[test]
     fn preview_url_builder_builds_public_url_with_manifest_suffix() {
-        let builder = PreviewUrlBuilder::new("assets/previews/eoj/main_sets");
+        let builder = PreviewUrlBuilder::new("assets/previews/eoj/main_sets")
+            .expect("builder should be created");
 
         let url = builder.build("set_1/001__flame-magus__variant-base__rev-02.jpeg");
 
@@ -307,7 +313,8 @@ mod tests {
 
     #[test]
     fn preview_url_builder_builds_public_url_for_root_without_suffix() {
-        let builder = PreviewUrlBuilder::new("assets/previews");
+        let builder = PreviewUrlBuilder::new("assets/previews")
+            .expect("builder should be created");
 
         let url = builder.build("set_1/001.jpeg");
 
@@ -347,11 +354,14 @@ mod tests {
     }
 
     #[test]
-    #[should_panic(
-        expected = "invalid manifest.preview_root 'assets/private-previews/eoj/main_sets': expected path under 'assets/previews'"
-    )]
-    fn preview_url_builder_panics_for_non_public_root() {
-        let _builder = PreviewUrlBuilder::new("assets/private-previews/eoj/main_sets");
+    fn preview_url_builder_rejects_non_public_root() {
+        let error = PreviewUrlBuilder::new("assets/private-previews/eoj/main_sets")
+            .expect_err("builder should reject non-public root");
+
+        assert_eq!(
+            error.to_string(),
+            "invalid manifest.preview_root 'assets/private-previews/eoj/main_sets': expected path under 'assets/previews'"
+        );
     }
 
     fn test_repo() -> ManifestRepo {
@@ -366,6 +376,7 @@ mod tests {
             preview_root: "assets/previews/eoj/main_sets".to_owned(),
             cards_by_id,
         })
+        .expect("repo should be created")
     }
 
     fn test_card(card_id: &str) -> CardManifestEntry {

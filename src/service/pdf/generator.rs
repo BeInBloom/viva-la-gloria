@@ -26,29 +26,31 @@ pub(super) struct PdfGenerator {
 }
 
 impl PdfGenerator {
-    pub(super) fn new() -> Self {
+    pub(super) fn new() -> std::io::Result<Self> {
         let pdf_storage = GeneratedPdfStorage::new(
             DEFAULT_OUTPUT_DIR,
             GeneratedPdfCleaner::new(FILE_TTL, MAX_DIR_SIZE),
             CLEANUP_PERIOD,
-        )
+        )?
         .start();
 
-        Self {
+        Ok(Self {
             pdf_storage,
             blocking_slots: Arc::new(Semaphore::new(MAX_PARALLEL_JOBS)),
-        }
+        })
     }
 
     pub(super) async fn generate_pdf(
         &self,
-        cancellation_token: CancellationToken,
         layout: Layout,
         card_paths: &[PathBuf],
     ) -> Result<PathBuf, PdfError> {
         let permit = Arc::clone(&self.blocking_slots)
             .try_acquire_owned()
             .map_err(|_| PdfInputError::PdfGenerationBusy)?;
+
+        let cancellation_token = CancellationToken::new();
+        let _drop_guard = cancellation_token.clone().drop_guard();
 
         let output_path = self.pdf_storage.next_output_path();
         let card_paths = card_paths.to_vec();
@@ -81,6 +83,7 @@ impl PdfGenerator {
             GeneratedPdfCleaner::new(FILE_TTL, MAX_DIR_SIZE),
             CLEANUP_PERIOD,
         )
+        .expect("test storage should be created")
         .start();
 
         Self {
@@ -148,13 +151,11 @@ mod tests {
         time::{SystemTime, UNIX_EPOCH},
     };
 
-    use tokio_util::sync::CancellationToken;
-
     use crate::errors::{PdfError, PdfInputError};
 
     use super::{
-        PdfGenerator, ensure_generation_not_cancelled,
         super::layout::{CARD_SIZE_MM, Layout, PAGE_SIZE_MM},
+        PdfGenerator, ensure_generation_not_cancelled,
     };
 
     #[test]
@@ -178,45 +179,30 @@ mod tests {
 
         let output_path = generator
             .generate_pdf(
-                CancellationToken::new(),
                 layout,
-                &[fixture_card_path("001__flame-magus__variant-base__rev-02.jpeg")],
+                &[fixture_card_path(
+                    "001__flame-magus__variant-base__rev-02.jpeg",
+                )],
             )
             .await
             .expect("pdf generation should succeed");
 
         assert_eq!(output_path.parent(), Some(dir.path().join("out").as_path()));
         assert!(output_path.exists(), "generated file should exist");
-        assert_eq!(output_path.extension().and_then(|ext| ext.to_str()), Some("pdf"));
+        assert_eq!(
+            output_path.extension().and_then(|ext| ext.to_str()),
+            Some("pdf")
+        );
 
         let bytes = fs::read(&output_path).expect("read generated pdf");
-        assert!(bytes.starts_with(b"%PDF-"), "generated file should be a pdf");
-        assert!(bytes.len() > 100, "generated pdf should not be trivially empty");
-    }
-
-    #[tokio::test]
-    async fn generate_pdf_returns_cancelled_and_writes_no_file_when_token_is_pre_cancelled() {
-        let dir = TestDir::new("generator-cancelled");
-        let output_dir = dir.path().join("out");
-        let generator = PdfGenerator::for_tests(output_dir.clone(), 1);
-        let layout = Layout::new(PAGE_SIZE_MM, CARD_SIZE_MM);
-        let token = CancellationToken::new();
-        token.cancel();
-
-        let error = generator
-            .generate_pdf(
-                token,
-                layout,
-                &[fixture_card_path("001__flame-magus__variant-base__rev-02.jpeg")],
-            )
-            .await
-            .unwrap_err();
-
-        assert!(matches!(
-            error,
-            PdfError::BadRequest(PdfInputError::PdfGenerationCancelled)
-        ));
-        assert_dir_is_empty(&output_dir);
+        assert!(
+            bytes.starts_with(b"%PDF-"),
+            "generated file should be a pdf"
+        );
+        assert!(
+            bytes.len() > 100,
+            "generated pdf should not be trivially empty"
+        );
     }
 
     #[tokio::test]
@@ -228,9 +214,10 @@ mod tests {
 
         let error = generator
             .generate_pdf(
-                CancellationToken::new(),
                 layout,
-                &[PathBuf::from("assets/images/eoj/main_sets/set_1/does-not-exist.jpeg")],
+                &[PathBuf::from(
+                    "assets/images/eoj/main_sets/set_1/does-not-exist.jpeg",
+                )],
             )
             .await
             .unwrap_err();

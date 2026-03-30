@@ -7,12 +7,17 @@ edition = "2024"
 anyhow = "1.0.102"
 axum = "0.8.8"
 fpdf = "0.1.1"
+moka = { version = "0.12.15", features = ["future"] }
 serde = { version = "1.0.228", features = ["derive"] }
 serde_json = "1.0.149"
 thiserror = "2.0.18"
 tokio = { version = "1.50.0", features = ["full"] }
 tokio-util = { version = "0.7.18", features = ["rt"] }
-tower-http = { version = "0.6.8", features = ["fs"] }
+tower = { version = "0.5.3", features = ["full"] }
+tower-http = { version = "0.6.8", features = ["fs", "full", "trace"] }
+tracing = "0.1.44"
+tracing-appender = "0.2.4"
+tracing-subscriber = "0.3.23"
 
 [profile.release]
 opt-level = 3

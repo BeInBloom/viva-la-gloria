@@ -1,6 +1,4 @@
-use std::{path::PathBuf, sync::Arc, time::Duration};
-
-use tokio_util::sync::CancellationToken;
+use std::{io, path::PathBuf, sync::Arc, time::Duration};
 
 use crate::{
     contracts::CardRepository,
@@ -14,6 +12,7 @@ use super::{
 };
 
 const PDF_GENERATION_TIMEOUT: Duration = Duration::from_secs(2);
+const MAX_CARD_IDS_PER_PDF: usize = 100;
 
 pub struct PdfService<R> {
     card_repository: Arc<R>,
@@ -24,8 +23,11 @@ impl<R> PdfService<R>
 where
     R: CardRepository,
 {
-    pub fn new(card_repository: Arc<R>) -> Self {
-        Self::with_pdf_generator(card_repository, PdfGenerator::new())
+    pub fn new(card_repository: Arc<R>) -> io::Result<Self> {
+        Ok(Self::with_pdf_generator(
+            card_repository,
+            PdfGenerator::new()?,
+        ))
     }
 
     fn with_pdf_generator(card_repository: Arc<R>, pdf_generator: PdfGenerator) -> Self {
@@ -41,18 +43,14 @@ where
             .map(normalize_card_id)
             .collect::<Vec<_>>();
 
-        ensure_cards_were_requested(&card_ids)?;
-
-        let cancellation_token = CancellationToken::new();
-        let _drop_guard = cancellation_token.clone().drop_guard();
+        validate_card_count(&card_ids)?;
 
         let card_paths = self.find_card_paths(&card_ids).await?;
         let layout = Layout::new(PAGE_SIZE_MM, CARD_SIZE_MM);
 
         let handle = tokio::time::timeout(
             PDF_GENERATION_TIMEOUT,
-            self.pdf_generator
-                .generate_pdf(cancellation_token, layout, &card_paths),
+            self.pdf_generator.generate_pdf(layout, &card_paths),
         );
 
         match handle.await {
@@ -83,9 +81,19 @@ where
     }
 }
 
-fn ensure_cards_were_requested(card_ids: &[String]) -> Result<(), PdfError> {
-    if card_ids.is_empty() {
+fn validate_card_count(card_ids: &[String]) -> Result<(), PdfError> {
+    let len = card_ids.len();
+
+    if len == 0 {
         return Err(PdfInputError::EmptyCardIds.into());
+    }
+
+    if len > MAX_CARD_IDS_PER_PDF {
+        return Err(PdfInputError::TooManyCardIds {
+            limit: MAX_CARD_IDS_PER_PDF,
+            actual: len,
+        }
+        .into());
     }
 
     Ok(())
@@ -107,15 +115,30 @@ mod tests {
     };
 
     use super::super::generator::PdfGenerator;
-    use super::{PdfService, ensure_cards_were_requested};
+    use super::{PdfService, validate_card_count};
 
     #[test]
-    fn ensure_cards_were_requested_rejects_empty_input() {
-        let error = ensure_cards_were_requested(&[]).unwrap_err();
+    fn validate_card_count_rejects_empty_input() {
+        let error = validate_card_count(&[]).unwrap_err();
 
         assert!(matches!(
             error,
             PdfError::BadRequest(PdfInputError::EmptyCardIds)
+        ));
+    }
+
+    #[test]
+    fn validate_card_count_rejects_inputs_larger_than_limit() {
+        let card_ids = (0..101).map(|index| index.to_string()).collect::<Vec<_>>();
+
+        let error = validate_card_count(&card_ids).unwrap_err();
+
+        assert!(matches!(
+            error,
+            PdfError::BadRequest(PdfInputError::TooManyCardIds {
+                limit: 100,
+                actual: 101,
+            })
         ));
     }
 

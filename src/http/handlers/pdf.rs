@@ -28,21 +28,21 @@ mod tests {
     use std::{
         collections::BTreeMap,
         fs,
+        net::IpAddr,
         path::{Path, PathBuf},
         sync::{Arc, OnceLock},
+        time::Duration,
     };
 
-    use axum::{
-        Json,
-        extract::State,
-    };
+    use axum::{Json, extract::State};
+    use moka::future::Cache;
     use tokio::sync::Mutex;
 
     use crate::{
         errors::{PdfError, PdfInputError},
         models::{AssetEntry, AssetVariant, CardManifestEntry, Manifest},
         repo::cards::ManifestRepo,
-        service::{cards::CardsService, pdf::PdfService},
+        service::pdf::PdfService,
     };
 
     use super::generate_pdf;
@@ -65,12 +65,16 @@ mod tests {
         assert!(response.path.starts_with("/generated-pdf/cards-"));
         assert!(response.path.ends_with(".pdf"));
 
-        let generated_file = GeneratedFile::new(PathBuf::from(response.path.trim_start_matches('/')));
+        let generated_file =
+            GeneratedFile::new(PathBuf::from(response.path.trim_start_matches('/')));
         assert!(
             generated_file.path().exists(),
             "generated file should exist on disk"
         );
-        assert_eq!(generated_file.path().parent(), Some(Path::new("generated-pdf")));
+        assert_eq!(
+            generated_file.path().parent(),
+            Some(Path::new("generated-pdf"))
+        );
         assert!(
             fs::metadata(generated_file.path())
                 .expect("generated pdf metadata")
@@ -105,12 +109,20 @@ mod tests {
     }
 
     fn test_state(manifest: Manifest) -> AppState {
-        let repo = Arc::new(ManifestRepo::new(manifest));
+        let repo = Arc::new(ManifestRepo::new(manifest).expect("repo should be created"));
 
         AppState {
-            pdf_service: Arc::new(PdfService::new(Arc::clone(&repo))),
-            cards_service: Arc::new(CardsService::new(repo)),
+            pdf_service: Arc::new(PdfService::new(Arc::clone(&repo)).expect("service should be created")),
+            card_repository: repo,
+            pdf_rate_limit: test_rate_limit_cache(),
         }
+    }
+
+    fn test_rate_limit_cache() -> Cache<IpAddr, ()> {
+        Cache::builder()
+            .time_to_live(Duration::from_secs(10))
+            .max_capacity(128)
+            .build()
     }
 
     fn manifest_with_single_card() -> Manifest {
